@@ -1,18 +1,27 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./Fonts/fonts.css";
+import Post from "./Post";
+import { Link } from "./styles";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="container">
+        <div className="col-lg-6">
+          <Post
+            name="Every Interaction"
+            profileName="EveryInteract"
+            time="23h"
+            comments={1}
+            retweets={4}
+            likes={2}
+            emails={0}
+            bigFont={true}
+          >
+            Our new website concept; Taking you<br />from… @ Every Interaction<br />
+            <Link href="#">instagram.com/p/BNFGrfhBP3M/</Link>
+          </Post>
+        </div>
       </div>
     );
   }
