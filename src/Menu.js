@@ -47,6 +47,9 @@ const MenuTab = styled.div`
   margin-top: 11px;
   cursor: pointer;
   border-bottom: ${props => (props.active ? "4px solid #1DA1F2" : "none")};
+  &:hover {
+    border-bottom: 4px solid #1da1f2;
+  }
 `;
 
 const MenuNumber = styled.span`
