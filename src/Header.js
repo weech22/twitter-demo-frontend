@@ -10,6 +10,7 @@ import avatar from "./avatar.png";
 
 const Wrap = styled.header`
   width: 100%;
+  background: white;
 `;
 
 const TweetButton = styled.button`
@@ -99,31 +100,33 @@ class Header extends Component {
   render() {
     return (
       <Wrap>
-        <div className="row">
-          <div className="col-lg-5">
-            <Navigation>
-              <NavLinkBlock>
-                <NavIcon src={home} alt="" />
-                <NavLink>Home</NavLink>
-              </NavLinkBlock>
-              <NavLinkBlock>
-                <NavIcon src={moments} alt="" />
-                <NavLink>Moments</NavLink>
-              </NavLinkBlock>
-              <NavLinkBlock>
-                <NavIcon src={notifications} alt="" />
-                <NavLink>Notifications</NavLink>
-              </NavLinkBlock>
-              <NavLinkBlock>
-                <NavIcon src={messages} alt="" />
-                <NavLink>Messages</NavLink>
-              </NavLinkBlock>
-            </Navigation>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-5">
+              <Navigation>
+                <NavLinkBlock>
+                  <NavIcon src={home} alt="" />
+                  <NavLink>Home</NavLink>
+                </NavLinkBlock>
+                <NavLinkBlock>
+                  <NavIcon src={moments} alt="" />
+                  <NavLink>Moments</NavLink>
+                </NavLinkBlock>
+                <NavLinkBlock>
+                  <NavIcon src={notifications} alt="" />
+                  <NavLink>Notifications</NavLink>
+                </NavLinkBlock>
+                <NavLinkBlock>
+                  <NavIcon src={messages} alt="" />
+                  <NavLink>Messages</NavLink>
+                </NavLinkBlock>
+              </Navigation>
+            </div>
+            <MainIcon src={logo} />
+            <SearchInput placeholder="Search Twitter" />
+            <Avatar src={avatar} />
+            <TweetButton>Tweet</TweetButton>
           </div>
-          <MainIcon src={logo} />
-          <SearchInput placeholder="Search Twitter" />
-          <Avatar src={avatar} />
-          <TweetButton>Tweet</TweetButton>
         </div>
       </Wrap>
     );
