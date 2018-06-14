@@ -5,6 +5,10 @@ import link from "./link-icon.svg";
 import joined from "./joined-icon.svg";
 import tick from "./tick-icon.svg";
 
+const Wrap = styled.div`
+  margin-top: 41.3px;
+`;
+
 const ContactButton = styled.button`
   cursor: pointer;
   background: #1da1f2;
@@ -101,7 +105,7 @@ const InfoLink = styled.a`
 class ProfileInfo extends Component {
   render() {
     return (
-      <div>
+      <Wrap>
         <InfoLine>
           <Name>Every Interaction</Name>
           <TitleIcon src={tick} />
@@ -130,7 +134,7 @@ class ProfileInfo extends Component {
           <ContactButton>Tweet to</ContactButton>
           <ContactButton>Message</ContactButton>
         </ButtonBlock>
-      </div>
+      </Wrap>
     );
   }
 }

@@ -96,6 +96,11 @@ const Avatar = styled.img`
   margin-right: 27.32px;
 `;
 
+const SearchBlock = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
 class Header extends Component {
   render() {
     return (
@@ -122,10 +127,16 @@ class Header extends Component {
                 </NavLinkBlock>
               </Navigation>
             </div>
-            <MainIcon src={logo} />
-            <SearchInput placeholder="Search Twitter" />
-            <Avatar src={avatar} />
-            <TweetButton>Tweet</TweetButton>
+            <div className="col-lg-2 center-lg">
+              <MainIcon src={logo} />
+            </div>
+            <div className="col-lg-5">
+              <SearchBlock>
+                <SearchInput placeholder="Search Twitter" />
+                <Avatar src={avatar} />
+                <TweetButton>Tweet</TweetButton>
+              </SearchBlock>
+            </div>
           </div>
         </div>
       </Wrap>

@@ -5,7 +5,6 @@ import more from "./more-icon.svg";
 const Wrap = styled.div`
   background: white;
   box-shadow: 0px 2px 2px #b0b8be;
-  margin-bottom: 50px;
 `;
 
 const MenuLink = styled.a`
@@ -36,16 +35,18 @@ const MenuBlock = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 100%;
 `;
 
 const MenuTab = styled.div`
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 11px;
-  margin-bottom: 7.7px;
   cursor: pointer;
+  border-bottom: ${props => (props.active ? "4px solid #1DA1F2" : "none")};
 `;
 
 const MenuNumber = styled.span`
@@ -55,7 +56,7 @@ const MenuNumber = styled.span`
   font-weight: 700;
   text-align: center;
   letter-spacing: 0.00846154px;
-  color: #788a98;
+  color: ${props => (props.active ? "#1da1f2" : "#788a98")};
 `;
 
 const MoreButton = styled.button`
@@ -79,9 +80,9 @@ class Menu extends Component {
             <div className="col-lg-3" />
             <div className="col-lg-4">
               <MenuBlock>
-                <MenuTab>
+                <MenuTab active>
                   <MenuLink>Tweets</MenuLink>
-                  <MenuNumber>8058</MenuNumber>
+                  <MenuNumber active>8,058</MenuNumber>
                 </MenuTab>
                 <MenuTab>
                   <MenuLink>Following</MenuLink>
@@ -89,7 +90,7 @@ class Menu extends Component {
                 </MenuTab>
                 <MenuTab>
                   <MenuLink>Followers</MenuLink>
-                  <MenuNumber>1815</MenuNumber>
+                  <MenuNumber>1,815</MenuNumber>
                 </MenuTab>
                 <MenuTab>
                   <MenuLink>Likes</MenuLink>
@@ -101,7 +102,7 @@ class Menu extends Component {
                 </MenuTab>
               </MenuBlock>
             </div>
-            <div className="col-lg-3 end-lg">
+            <div className="col-lg-5 end-lg">
               <FollowButton>Follow</FollowButton>
               <MoreButton />
             </div>

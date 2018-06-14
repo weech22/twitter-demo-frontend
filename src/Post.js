@@ -5,12 +5,18 @@ import avatar from "./avatar.png";
 import comments from "./comments-icon.svg";
 import retweets from "./retweets-icon.svg";
 import likes from "./likes-icon.svg";
+import loves from "./loves-icon.svg";
 import emails from "./emails-icon.svg";
+import Preview from "./Preview";
+import pinned from "./pinned-icon.svg";
 
 const Wrap = styled.div`
   padding-left: 17.5px;
+  padding-bottom: 12px;
+  padding-top: 8px;
   display: flex;
   flex-direction: row;
+  border-top: 1px solid #e1e8ed;
 `;
 
 const PostBlock = styled.div`
@@ -22,8 +28,9 @@ const PostBlock = styled.div`
 const AvatarBlock = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-top: 10.6px;
+  margin-top: ${props => (props.pinned ? "3px" : "10.6px")};
+  justify-content: flex-start;
+  align-items: flex-end;
 `;
 
 const Name = styled.span`
@@ -56,6 +63,7 @@ const Text = styled.p`
   font-weight: 400;
   letter-spacing: -0.22px;
   color: #292f33;
+  margin-top: 0;
 `;
 
 const BigText = styled.p`
@@ -73,6 +81,10 @@ const Icon = styled.img`
   margin-right: 11px;
 `;
 
+const Pin = styled.img`
+  margin-bottom: 9.6px;
+`;
+
 const TweetAction = styled.div`
   display: flex;
 `;
@@ -82,7 +94,8 @@ const TweetActionCount = styled.span`
   line-height: normal;
   font-size: 13px;
   letter-spacing: -0.19px;
-  color: #667580;
+  color: ${props => (props.liked ? "#E2264D" : "#667580")};
+  font-weight: ${props => (props.liked ? "bold" : "normal")};
 `;
 
 const TweetActionBlock = styled.div`
@@ -91,23 +104,57 @@ const TweetActionBlock = styled.div`
   max-width: 250px;
 `;
 
+const Pinned = styled.span`
+  font-family: HelveticaNeue;
+  line-height: normal;
+  font-size: 12px;
+  letter-spacing: -0.175385px;
+  color: #707e88;
+  margin-bottom: 4px;
+  display: block;
+`;
+
+const ImageBlock = styled.div`
+  margin-right: 11px;
+  margin-bottom: 14px;
+`;
+
+const PostedImage = styled.img`
+  width: 495px;
+`;
+
 class Post extends Component {
   render() {
     return (
       <Wrap>
-        <AvatarBlock>
+        <AvatarBlock pinned={this.props.pinned}>
+          {this.props.pinned && <Pin src={pinned} />}
           <AvatarImage src={avatar} />
         </AvatarBlock>
         <PostBlock>
           <div>
+            {this.props.pinned && <Pinned>Pinned Tweet</Pinned>}
             <Name>{this.props.name} </Name>
             <ProfileName>
               @{this.props.profileName} • {this.props.time}
             </ProfileName>
           </div>
-
           {this.props.bigFont && <BigText>{this.props.children}</BigText>}
           {!this.props.bigFont && <Text>{this.props.children}</Text>}
+          {this.props.preview && (
+            <Preview
+              image={this.props.preview.image}
+              link={this.props.preview.link}
+              title={this.props.preview.title}
+            >
+              {this.props.preview.description}
+            </Preview>
+          )}
+          {this.props.image && (
+            <ImageBlock>
+              <PostedImage src={this.props.image} />
+            </ImageBlock>
+          )}
           <TweetActionBlock>
             <TweetAction>
               <Icon src={comments} />
@@ -115,17 +162,15 @@ class Post extends Component {
                 {this.props.comments > 0 && this.props.comments}
               </TweetActionCount>
             </TweetAction>
-
             <TweetAction>
               <Icon src={retweets} />
               <TweetActionCount>
                 {this.props.retweets > 0 && this.props.retweets}
               </TweetActionCount>
             </TweetAction>
-
             <TweetAction>
-              <Icon src={likes} />
-              <TweetActionCount>
+              {this.props.liked ? <Icon src={loves} /> : <Icon src={likes} />}
+              <TweetActionCount liked={this.props.liked}>
                 {this.props.likes > 0 && this.props.likes}
               </TweetActionCount>
             </TweetAction>
