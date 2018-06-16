@@ -6,7 +6,7 @@ import notifications from "./notifications-icon.svg";
 import messages from "./messages-icon.svg";
 import logo from "./twitter-logo.svg";
 import search from "./search-icon.svg";
-import avatar from "./avatar.png";
+import avatar from "../avatar.png";
 
 const Wrap = styled.header`
   width: 100%;

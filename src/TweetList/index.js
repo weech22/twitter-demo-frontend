@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Post from "./Post";
+import Post from "../Post";
 import vilijamis from "./vilijamis.png";
 import postedImage from "./pinned-post-image.png";
 

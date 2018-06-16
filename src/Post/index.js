@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Preview from "./Preview";
-import avatar from "./avatar.png";
+import avatar from "../avatar.png";
+import pinned from "./pinned-icon.svg";
 import comments from "./comments-icon.svg";
 import retweets from "./retweets-icon.svg";
 import likes from "./likes-icon.svg";
 import loves from "./loves-icon.svg";
 import envelope from "./envelope-icon.svg";
-import pinned from "./pinned-icon.svg";
 
 const Wrap = styled.div`
   padding: 8px 0 12px 18px;

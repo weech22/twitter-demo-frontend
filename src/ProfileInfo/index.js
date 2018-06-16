@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ProfileInfoLine from "./ProfileinfoLine";
+import InfoLine from "./InfoLine";
 import tick from "./tick-icon.svg";
 
 const Wrap = styled.div`
@@ -76,9 +76,9 @@ const ProfileInfo = props => (
       how<br />can we make things *work* amazing.
     </Description>
     <div>
-      <ProfileInfoLine location="London, UK" />
-      <ProfileInfoLine site="everyinteraction.com" />
-      <ProfileInfoLine joined="May 2008" />
+      <InfoLine location="London, UK" />
+      <InfoLine site="everyinteraction.com" />
+      <InfoLine joined="May 2008" />
     </div>
     <ButtonBlock>
       <ContactButton>Tweet to</ContactButton>
