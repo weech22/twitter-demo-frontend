@@ -70,6 +70,7 @@ const BigText = styled.p`
 
 const Icon = styled.img`
   margin-right: 11px;
+  cursor: pointer;
 `;
 
 const Pin = styled.img`
