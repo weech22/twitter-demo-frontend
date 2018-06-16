@@ -9,7 +9,7 @@ import TweetList from "./TweetList";
 const EveryInteract = () => (
   <div>
     <Helmet>
-      <title>EveryInteract</title>
+      <title>Every Interaction (@EveryInteract)</title>
     </Helmet>
     <Header />
     <Wallpaper />
