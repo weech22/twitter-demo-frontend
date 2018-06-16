@@ -104,6 +104,7 @@ const Pinned = styled.span`
 
 const ImageBlock = styled.div`
   margin: 0 11px 14px 0;
+  cursor: pointer;
 `;
 
 const PostedImage = styled.img`
