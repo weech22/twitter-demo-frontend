@@ -74,46 +74,42 @@ const MoreButton = styled.button`
   cursor: pointer;
 `;
 
-class Menu extends Component {
-  render() {
-    return (
-      <Wrap>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-3" />
-            <div className="col-lg-4">
-              <MenuBlock>
-                <MenuTab active>
-                  <MenuLink>Tweets</MenuLink>
-                  <MenuNumber active>8,058</MenuNumber>
-                </MenuTab>
-                <MenuTab>
-                  <MenuLink>Following</MenuLink>
-                  <MenuNumber>721</MenuNumber>
-                </MenuTab>
-                <MenuTab>
-                  <MenuLink>Followers</MenuLink>
-                  <MenuNumber>1,815</MenuNumber>
-                </MenuTab>
-                <MenuTab>
-                  <MenuLink>Likes</MenuLink>
-                  <MenuNumber>460</MenuNumber>
-                </MenuTab>
-                <MenuTab>
-                  <MenuLink>Lists</MenuLink>
-                  <MenuNumber>2</MenuNumber>
-                </MenuTab>
-              </MenuBlock>
-            </div>
-            <div className="col-lg-5 end-lg">
-              <FollowButton>Follow</FollowButton>
-              <MoreButton />
-            </div>
-          </div>
+const Menu = props => (
+  <Wrap>
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-3" />
+        <div className="col-lg-4">
+          <MenuBlock>
+            <MenuTab active>
+              <MenuLink>Tweets</MenuLink>
+              <MenuNumber active>8,058</MenuNumber>
+            </MenuTab>
+            <MenuTab>
+              <MenuLink>Following</MenuLink>
+              <MenuNumber>721</MenuNumber>
+            </MenuTab>
+            <MenuTab>
+              <MenuLink>Followers</MenuLink>
+              <MenuNumber>1,815</MenuNumber>
+            </MenuTab>
+            <MenuTab>
+              <MenuLink>Likes</MenuLink>
+              <MenuNumber>460</MenuNumber>
+            </MenuTab>
+            <MenuTab>
+              <MenuLink>Lists</MenuLink>
+              <MenuNumber>2</MenuNumber>
+            </MenuTab>
+          </MenuBlock>
         </div>
-      </Wrap>
-    );
-  }
-}
+        <div className="col-lg-5 end-lg">
+          <FollowButton>Follow</FollowButton>
+          <MoreButton />
+        </div>
+      </div>
+    </div>
+  </Wrap>
+);
 
 export default Menu;

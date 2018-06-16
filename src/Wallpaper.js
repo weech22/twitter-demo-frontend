@@ -16,22 +16,18 @@ const Avatar = styled.img`
   top: 257px;
 `;
 
-class Wallpaper extends Component {
-  render() {
-    return (
-      <div>
-        <Background src={wallpaper}>
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-3">
-                <Avatar src={avatar} />
-              </div>
-            </div>
+const Wallpaper = props => (
+  <div>
+    <Background src={wallpaper}>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-3">
+            <Avatar src={avatar} />
           </div>
-        </Background>
+        </div>
       </div>
-    );
-  }
-}
+    </Background>
+  </div>
+);
 
 export default Wallpaper;

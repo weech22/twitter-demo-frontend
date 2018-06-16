@@ -44,20 +44,15 @@ const TextBlock = styled.div`
   padding-bottom: 8px;
 `;
 
-class Preview extends Component {
-  render() {
-    return (
-      <Wrap>
-        <Image src={this.props.image} />
-
-        <TextBlock>
-          <Title>{this.props.title}</Title>
-          <Description>{this.props.children}</Description>
-          <Link>{this.props.link}</Link>
-        </TextBlock>
-      </Wrap>
-    );
-  }
-}
+const Preview = props => (
+  <Wrap>
+    <Image src={props.image} />
+    <TextBlock>
+      <Title>{props.title}</Title>
+      <Description>{props.children}</Description>
+      <Link>{props.link}</Link>
+    </TextBlock>
+  </Wrap>
+);
 
 export default Preview;

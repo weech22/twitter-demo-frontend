@@ -37,63 +37,59 @@ const previewToVilijamis = {
   image: vilijamis
 };
 
-class TweetList extends Component {
-  render() {
-    return (
-      <Wrap>
-        <ListHeader>
-          <ListLink active>Tweets</ListLink>
-          <ListLink>Tweets & replies</ListLink>
-          <ListLink>Media</ListLink>
-        </ListHeader>
-        <Post
-          name="Every Interaction"
-          profileName="EveryInteract"
-          time="2 Mar 2015"
-          comments={0}
-          retweets={17}
-          likes={47}
-          emails={0}
-          bigFont
-          pinned
-          liked
-          image={postedImage}
-        >
-          We’ve made some more resources for all<br />you wonderful{" "}
-          <Link>#design</Link> folk<br />
-          <Link>everyinteraction.com/resources/</Link> <Link>#webdesign</Link>
-          <br /> <Link>#UI</Link>
-        </Post>
-        <Post
-          name="Every Interaction"
-          profileName="EveryInteract"
-          time="23h"
-          comments={1}
-          retweets={4}
-          likes={2}
-          emails={0}
-          bigFont
-        >
-          Our new website concept; Taking you<br />from… @ Every Interaction<br />
-          <Link href="#">instagram.com/p/BNFGrfhBP3M/</Link>
-        </Post>
-        <Post
-          name="Every Interaction"
-          profileName="EveryInteract"
-          time="Nov 18"
-          comments={0}
-          retweets={0}
-          likes={0}
-          emails={0}
-          bigFont={false}
-          preview={previewToVilijamis}
-        >
-          Variable web fonts are coming, and will open a world of opportunities<br />for
-          weight use online
-        </Post>
-      </Wrap>
-    );
-  }
-}
+const TweetList = props => (
+  <Wrap>
+    <ListHeader>
+      <ListLink active>Tweets</ListLink>
+      <ListLink>Tweets & replies</ListLink>
+      <ListLink>Media</ListLink>
+    </ListHeader>
+    <Post
+      name="Every Interaction"
+      profileName="EveryInteract"
+      time="2 Mar 2015"
+      comments={0}
+      retweets={17}
+      likes={47}
+      emails={0}
+      bigFont
+      pinned
+      liked
+      image={postedImage}
+    >
+      We’ve made some more resources for all<br />you wonderful{" "}
+      <Link>#design</Link> folk<br />
+      <Link>everyinteraction.com/resources/</Link> <Link>#webdesign</Link>
+      <br /> <Link>#UI</Link>
+    </Post>
+    <Post
+      name="Every Interaction"
+      profileName="EveryInteract"
+      time="23h"
+      comments={1}
+      retweets={4}
+      likes={2}
+      emails={0}
+      bigFont
+    >
+      Our new website concept; Taking you<br />from… @ Every Interaction<br />
+      <Link href="#">instagram.com/p/BNFGrfhBP3M/</Link>
+    </Post>
+    <Post
+      name="Every Interaction"
+      profileName="EveryInteract"
+      time="Nov 18"
+      comments={0}
+      retweets={0}
+      likes={0}
+      emails={0}
+      bigFont={false}
+      preview={previewToVilijamis}
+    >
+      Variable web fonts are coming, and will open a world of opportunities<br />for
+      weight use online
+    </Post>
+  </Wrap>
+);
 
 export default TweetList;

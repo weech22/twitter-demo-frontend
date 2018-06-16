@@ -102,41 +102,37 @@ const InfoLink = styled.a`
   color: #1d81c2;
 `;
 
-class ProfileInfo extends Component {
-  render() {
-    return (
-      <Wrap>
-        <InfoLine>
-          <Name>Every Interaction</Name>
-          <TitleIcon src={tick} />
-        </InfoLine>
-        <ProfileName>@EveryInteract</ProfileName>
-        <FollowerProfile>Follows you</FollowerProfile>
-        <Description>
-          UX Design studio focused problem<br />solving creativity. Design to us
-          is how<br />can we make things *work* amazing.
-        </Description>
-        <div>
-          <InfoLine>
-            <InfoIcon src={location} />
-            <InfoText>London, UK</InfoText>
-          </InfoLine>
-          <InfoLine>
-            <InfoIcon src={link} />
-            <InfoLink>everyinteraction.com</InfoLink>
-          </InfoLine>
-          <InfoLine>
-            <InfoIcon src={joined} />
-            <InfoText>Joined May 2008</InfoText>
-          </InfoLine>
-        </div>
-        <ButtonBlock>
-          <ContactButton>Tweet to</ContactButton>
-          <ContactButton>Message</ContactButton>
-        </ButtonBlock>
-      </Wrap>
-    );
-  }
-}
+const ProfileInfo = props => (
+  <Wrap>
+    <InfoLine>
+      <Name>Every Interaction</Name>
+      <TitleIcon src={tick} />
+    </InfoLine>
+    <ProfileName>@EveryInteract</ProfileName>
+    <FollowerProfile>Follows you</FollowerProfile>
+    <Description>
+      UX Design studio focused problem<br />solving creativity. Design to us is
+      how<br />can we make things *work* amazing.
+    </Description>
+    <div>
+      <InfoLine>
+        <InfoIcon src={location} />
+        <InfoText>London, UK</InfoText>
+      </InfoLine>
+      <InfoLine>
+        <InfoIcon src={link} />
+        <InfoLink>everyinteraction.com</InfoLink>
+      </InfoLine>
+      <InfoLine>
+        <InfoIcon src={joined} />
+        <InfoText>Joined May 2008</InfoText>
+      </InfoLine>
+    </div>
+    <ButtonBlock>
+      <ContactButton>Tweet to</ContactButton>
+      <ContactButton>Message</ContactButton>
+    </ButtonBlock>
+  </Wrap>
+);
 
 export default ProfileInfo;

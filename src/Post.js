@@ -123,68 +123,64 @@ const PostedImage = styled.img`
   width: 495px;
 `;
 
-class Post extends Component {
-  render() {
-    return (
-      <Wrap>
-        <AvatarBlock pinned={this.props.pinned}>
-          {this.props.pinned && <Pin src={pinned} />}
-          <AvatarImage src={avatar} />
-        </AvatarBlock>
-        <PostBlock>
-          <div>
-            {this.props.pinned && <Pinned>Pinned Tweet</Pinned>}
-            <Name>{this.props.name} </Name>
-            <ProfileName>
-              @{this.props.profileName} • {this.props.time}
-            </ProfileName>
-          </div>
-          {this.props.bigFont && <BigText>{this.props.children}</BigText>}
-          {!this.props.bigFont && <Text>{this.props.children}</Text>}
-          {this.props.preview && (
-            <Preview
-              image={this.props.preview.image}
-              link={this.props.preview.link}
-              title={this.props.preview.title}
-            >
-              {this.props.preview.description}
-            </Preview>
-          )}
-          {this.props.image && (
-            <ImageBlock>
-              <PostedImage src={this.props.image} />
-            </ImageBlock>
-          )}
-          <TweetActionBlock>
-            <TweetAction>
-              <Icon src={comments} />
-              <TweetActionCount>
-                {this.props.comments > 0 && this.props.comments}
-              </TweetActionCount>
-            </TweetAction>
-            <TweetAction>
-              <Icon src={retweets} />
-              <TweetActionCount>
-                {this.props.retweets > 0 && this.props.retweets}
-              </TweetActionCount>
-            </TweetAction>
-            <TweetAction>
-              {this.props.liked ? <Icon src={loves} /> : <Icon src={likes} />}
-              <TweetActionCount liked={this.props.liked}>
-                {this.props.likes > 0 && this.props.likes}
-              </TweetActionCount>
-            </TweetAction>
-            <TweetAction>
-              <Icon src={emails} />
-              <TweetActionCount>
-                {this.props.emails > 0 && this.props.emails}
-              </TweetActionCount>
-            </TweetAction>
-          </TweetActionBlock>
-        </PostBlock>
-      </Wrap>
-    );
-  }
-}
+const Post = props => (
+  <Wrap>
+    <AvatarBlock pinned={props.pinned}>
+      {props.pinned && <Pin src={pinned} />}
+      <AvatarImage src={avatar} />
+    </AvatarBlock>
+    <PostBlock>
+      <div>
+        {props.pinned && <Pinned>Pinned Tweet</Pinned>}
+        <Name>{props.name} </Name>
+        <ProfileName>
+          @{props.profileName} • {props.time}
+        </ProfileName>
+      </div>
+      {props.bigFont && <BigText>{props.children}</BigText>}
+      {!props.bigFont && <Text>{props.children}</Text>}
+      {props.preview && (
+        <Preview
+          image={props.preview.image}
+          link={props.preview.link}
+          title={props.preview.title}
+        >
+          {props.preview.description}
+        </Preview>
+      )}
+      {props.image && (
+        <ImageBlock>
+          <PostedImage src={props.image} />
+        </ImageBlock>
+      )}
+      <TweetActionBlock>
+        <TweetAction>
+          <Icon src={comments} />
+          <TweetActionCount>
+            {props.comments > 0 && props.comments}
+          </TweetActionCount>
+        </TweetAction>
+        <TweetAction>
+          <Icon src={retweets} />
+          <TweetActionCount>
+            {props.retweets > 0 && props.retweets}
+          </TweetActionCount>
+        </TweetAction>
+        <TweetAction>
+          {props.liked ? <Icon src={loves} /> : <Icon src={likes} />}
+          <TweetActionCount liked={props.liked}>
+            {props.likes > 0 && props.likes}
+          </TweetActionCount>
+        </TweetAction>
+        <TweetAction>
+          <Icon src={emails} />
+          <TweetActionCount>
+            {props.emails > 0 && props.emails}
+          </TweetActionCount>
+        </TweetAction>
+      </TweetActionBlock>
+    </PostBlock>
+  </Wrap>
+);
 
 export default Post;

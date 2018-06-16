@@ -101,47 +101,43 @@ const SearchBlock = styled.div`
   justify-content: flex-end;
 `;
 
-class Header extends Component {
-  render() {
-    return (
-      <Wrap>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-5">
-              <Navigation>
-                <NavLinkBlock>
-                  <NavIcon src={home} alt="" />
-                  <NavLink>Home</NavLink>
-                </NavLinkBlock>
-                <NavLinkBlock>
-                  <NavIcon src={moments} alt="" />
-                  <NavLink>Moments</NavLink>
-                </NavLinkBlock>
-                <NavLinkBlock>
-                  <NavIcon src={notifications} alt="" />
-                  <NavLink>Notifications</NavLink>
-                </NavLinkBlock>
-                <NavLinkBlock>
-                  <NavIcon src={messages} alt="" />
-                  <NavLink>Messages</NavLink>
-                </NavLinkBlock>
-              </Navigation>
-            </div>
-            <div className="col-lg-2 center-lg">
-              <MainIcon src={logo} />
-            </div>
-            <div className="col-lg-5">
-              <SearchBlock>
-                <SearchInput placeholder="Search Twitter" />
-                <Avatar src={avatar} />
-                <TweetButton>Tweet</TweetButton>
-              </SearchBlock>
-            </div>
-          </div>
+const Header = props => (
+  <Wrap>
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-5">
+          <Navigation>
+            <NavLinkBlock>
+              <NavIcon src={home} alt="" />
+              <NavLink>Home</NavLink>
+            </NavLinkBlock>
+            <NavLinkBlock>
+              <NavIcon src={moments} alt="" />
+              <NavLink>Moments</NavLink>
+            </NavLinkBlock>
+            <NavLinkBlock>
+              <NavIcon src={notifications} alt="" />
+              <NavLink>Notifications</NavLink>
+            </NavLinkBlock>
+            <NavLinkBlock>
+              <NavIcon src={messages} alt="" />
+              <NavLink>Messages</NavLink>
+            </NavLinkBlock>
+          </Navigation>
         </div>
-      </Wrap>
-    );
-  }
-}
+        <div className="col-lg-2 center-lg">
+          <MainIcon src={logo} />
+        </div>
+        <div className="col-lg-5">
+          <SearchBlock>
+            <SearchInput placeholder="Search Twitter" />
+            <Avatar src={avatar} />
+            <TweetButton>Tweet</TweetButton>
+          </SearchBlock>
+        </div>
+      </div>
+    </div>
+  </Wrap>
+);
 
 export default Header;
