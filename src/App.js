@@ -1,26 +1,17 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import Header from "./Header";
-import Wallpaper from "./Wallpaper";
-import Menu from "./Menu";
-import ProfileInfo from "./ProfileInfo";
-import TweetList from "./TweetList";
+import { Redirect } from "react-router";
+
+import EveryInteract from "./EveryInteract";
 
 const App = props => (
   <div>
-    <Header />
-    <Wallpaper />
-    <Menu />
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-3">
-          <ProfileInfo />
-        </div>
-        <div className="col-lg-6">
-          <TweetList />
-        </div>
+    <BrowserRouter>
+      <div>
+        <Route render={() => <Redirect to="/everyinteract" />} />
+        <Route path="/everyinteract" component={EveryInteract} />
       </div>
-    </div>
+    </BrowserRouter>
   </div>
 );
 
