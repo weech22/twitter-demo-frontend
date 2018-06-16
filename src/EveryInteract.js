@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import Header from "./Header";
 import Wallpaper from "./Wallpaper";
 import Menu from "./Menu";
@@ -7,6 +8,9 @@ import TweetList from "./TweetList";
 
 const EveryInteract = () => (
   <div>
+    <Helmet>
+      <title>EveryInteract</title>
+    </Helmet>
     <Header />
     <Wallpaper />
     <Menu />
