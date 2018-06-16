@@ -10,6 +10,10 @@ const EveryInteract = () => (
   <div>
     <Helmet>
       <title>Every Interaction (@EveryInteract)</title>
+      <meta
+        name="description"
+        content="Последние твиты от Every Interaction (@EveryInteract). A user-experience design studio in London. We specialise in making the complex simple, the confusing intuitive and the perplexing obvious. London, UK"
+      />
     </Helmet>
     <Header />
     <Wallpaper />
