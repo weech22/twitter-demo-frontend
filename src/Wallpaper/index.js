@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import wallpaper from "./profile-bg.jpg";
-import avatar from "./profile-picture.png";
+
+const wallpaper = `${process.env.PUBLIC_URL}/profile-bg.jpg`;
+const avatar = `${process.env.PUBLIC_URL}/profile-picture.png`;
 
 const Background = styled.div`
   height: 379px;

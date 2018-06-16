@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import Post from "../Post";
 import vilijamis from "./vilijamis.png";
-import postedImage from "./pinned-post-image.png";
+import Post from "../Post";
+
+const postedImage = `${process.env.PUBLIC_URL}/pinned-post-image.png`;
 
 const Wrap = styled.div`
   background: white;
