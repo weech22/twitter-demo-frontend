@@ -74,23 +74,23 @@ const Menu = props => (
       <div className="row">
         <div className="col-lg-4 col-lg-offset-3">
           <MenuBlock>
-            <MenuTab to="/">
+            <MenuTab to="/everyinteract" activeClassName="menu">
               <LinkCaption>Tweets</LinkCaption>
               <MenuNumber>8,058</MenuNumber>
             </MenuTab>
-            <MenuTab to="/following">
+            <MenuTab to="/following" activeClassName="menu">
               <LinkCaption>Following</LinkCaption>
               <MenuNumber>721</MenuNumber>
             </MenuTab>
-            <MenuTab to="/followers">
+            <MenuTab to="/followers" activeClassName="menu">
               <LinkCaption>Followers</LinkCaption>
               <MenuNumber>1,815</MenuNumber>
             </MenuTab>
-            <MenuTab to="/likes">
+            <MenuTab to="/likes" activeClassName="menu">
               <LinkCaption>Likes</LinkCaption>
               <MenuNumber>460</MenuNumber>
             </MenuTab>
-            <MenuTab to="/lists">
+            <MenuTab to="/lists" activeClassName="menu">
               <LinkCaption>Lists</LinkCaption>
               <MenuNumber>2</MenuNumber>
             </MenuTab>

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import Post from "../Post";
 import vilijamis from "./vilijamis.png";
 import postedImage from "./pinned-post-image.png";
@@ -15,12 +16,16 @@ const Link = styled.a`
   color: #72c4f6;
 `;
 
-const ListLink = styled.a`
+const ListLink = styled(NavLink)`
+  text-decoration: none;
   font-size: 18px;
   font-weight: 700;
-  color: ${props => (props.active ? "#14171a" : "#1da1f2")};
-  cursor: ${props => (props.active ? "default" : "pointer")};
+  cursor: pointer;
   margin-right: 35px;
+`;
+
+const LinkCaption = styled.span`
+  color: #1da1f2;
 `;
 
 const ListHeader = styled.div`
@@ -38,9 +43,15 @@ const previewToVilijamis = {
 const TweetList = props => (
   <Wrap>
     <ListHeader>
-      <ListLink active>Tweets</ListLink>
-      <ListLink>Tweets & replies</ListLink>
-      <ListLink>Media</ListLink>
+      <ListLink to="/" activeClassName="tweet-list">
+        <LinkCaption>Tweets</LinkCaption>
+      </ListLink>
+      <ListLink to="/replies" activeClassName="tweet-list">
+        <LinkCaption>Tweets & replies</LinkCaption>
+      </ListLink>
+      <ListLink to="/media" activeClassName="tweet-list">
+        <LinkCaption>Media</LinkCaption>
+      </ListLink>
     </ListHeader>
     <Post
       name="Every Interaction"

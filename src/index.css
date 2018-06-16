@@ -5,10 +5,15 @@ body {
   background: #e6ecf0;
 }
 
-.active {
+.tweet-list > span {
+  color: black;
+  cursor: default;
+}
+
+.menu {
   border-bottom: 4px solid #1da1f2;
 }
 
-.active > span {
+.menu > span {
   color: #1da1f2;
 }

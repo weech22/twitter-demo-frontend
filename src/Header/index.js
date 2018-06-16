@@ -25,7 +25,7 @@ const TweetButton = styled.button`
   padding: 0 16px;
 `;
 
-const NavLink = styled.a`
+const Link = styled.a`
   text-decoration: none;
   cursor: pointer;
   font-weight: 500;
@@ -35,12 +35,12 @@ const NavLink = styled.a`
   margin-top: 1px;
 `;
 
-const NavLinkBlock = styled.div`
+const LinkBlock = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const NavIcon = styled.img`
+const Icon = styled.img`
   margin-right: 4px;
 `;
 
@@ -89,22 +89,22 @@ const Header = props => (
       <div className="row">
         <div className="col-lg-5">
           <Navigation>
-            <NavLinkBlock>
-              <NavIcon src={homeIcon} alt="" />
-              <NavLink>Home</NavLink>
-            </NavLinkBlock>
-            <NavLinkBlock>
-              <NavIcon src={moments} alt="" />
-              <NavLink>Moments</NavLink>
-            </NavLinkBlock>
-            <NavLinkBlock>
-              <NavIcon src={notifications} alt="" />
-              <NavLink>Notifications</NavLink>
-            </NavLinkBlock>
-            <NavLinkBlock>
-              <NavIcon src={messages} alt="" />
-              <NavLink>Messages</NavLink>
-            </NavLinkBlock>
+            <LinkBlock>
+              <Icon src={homeIcon} alt="" />
+              <Link>Home</Link>
+            </LinkBlock>
+            <LinkBlock>
+              <Icon src={moments} alt="" />
+              <Link>Moments</Link>
+            </LinkBlock>
+            <LinkBlock>
+              <Icon src={notifications} alt="" />
+              <Link>Notifications</Link>
+            </LinkBlock>
+            <LinkBlock>
+              <Icon src={messages} alt="" />
+              <Link>Messages</Link>
+            </LinkBlock>
           </Navigation>
         </div>
         <div className="col-lg-2 center-lg">
