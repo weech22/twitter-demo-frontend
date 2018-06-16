@@ -11,16 +11,14 @@ import Preview from "./Preview";
 import pinned from "./pinned-icon.svg";
 
 const Wrap = styled.div`
-  padding-left: 17.5px;
-  padding-bottom: 12px;
-  padding-top: 8px;
+  padding: 8px 0 12px 18px;
   display: flex;
   flex-direction: row;
   border-top: 1px solid #e1e8ed;
 `;
 
 const PostBlock = styled.div`
-  margin-left: 12.5px;
+  margin-left: 13px;
   display: flex;
   flex-direction: column;
 `;
@@ -28,7 +26,7 @@ const PostBlock = styled.div`
 const AvatarBlock = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: ${props => (props.pinned ? "3px" : "10.6px")};
+  margin-top: ${props => (props.pinned ? "3px" : "11px")};
   justify-content: flex-start;
   align-items: flex-end;
 `;
@@ -38,7 +36,7 @@ const Name = styled.span`
   line-height: 19px;
   font-weight: 500;
   font-size: 15px;
-  letter-spacing: -0.219231px;
+  letter-spacing: -0.2px;
   color: #292f33;
 `;
 
@@ -47,7 +45,6 @@ const ProfileName = styled.span`
   line-height: 19px;
   font-size: 13px;
   font-weight: 400;
-  letter-spacing: 0.0107692px;
   color: #697787;
 `;
 
@@ -61,7 +58,7 @@ const Text = styled.p`
   line-height: 22px;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: -0.22px;
+  letter-spacing: -0.2px;
   color: #292f33;
   margin-top: 0;
 `;
@@ -71,10 +68,9 @@ const BigText = styled.p`
   line-height: 30px;
   font-size: 25px;
   font-weight: 200;
-  letter-spacing: 0.38px;
+  letter-spacing: 0.4px;
   color: #292f33;
-  margin-bottom: 13px;
-  margin-top: 0;
+  margin: 0 0 13px 0;
 `;
 
 const Icon = styled.img`
@@ -82,7 +78,7 @@ const Icon = styled.img`
 `;
 
 const Pin = styled.img`
-  margin-bottom: 9.6px;
+  margin-bottom: 10px;
 `;
 
 const TweetAction = styled.div`
@@ -91,9 +87,8 @@ const TweetAction = styled.div`
 
 const TweetActionCount = styled.span`
   font-family: HelveticaNeue;
-  line-height: normal;
   font-size: 13px;
-  letter-spacing: -0.19px;
+  letter-spacing: -0.2px;
   color: ${props => (props.liked ? "#E2264D" : "#667580")};
   font-weight: ${props => (props.liked ? "bold" : "normal")};
 `;
@@ -106,17 +101,15 @@ const TweetActionBlock = styled.div`
 
 const Pinned = styled.span`
   font-family: HelveticaNeue;
-  line-height: normal;
   font-size: 12px;
-  letter-spacing: -0.175385px;
+  letter-spacing: -0.2px;
   color: #707e88;
   margin-bottom: 4px;
   display: block;
 `;
 
 const ImageBlock = styled.div`
-  margin-right: 11px;
-  margin-bottom: 14px;
+  margin: 0 11px 14px 0;
 `;
 
 const PostedImage = styled.img`

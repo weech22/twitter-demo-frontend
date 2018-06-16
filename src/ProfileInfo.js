@@ -6,24 +6,21 @@ import joined from "./joined-icon.svg";
 import tick from "./tick-icon.svg";
 
 const Wrap = styled.div`
-  margin-top: 41.3px;
+  margin-top: 41px;
 `;
 
 const ContactButton = styled.button`
   cursor: pointer;
   background: #1da1f2;
-  border-radius: 100px;
+  border-radius: 20px;
   border: none;
   color: white;
   font-family: HelveticaNeue;
-  line-height: 14px;
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.0107692px;
-  text-align: center;
   width: 128px;
   height: 39px;
-  margin: 0 2.5px;
+  margin: 0 3px;
 `;
 
 const Description = styled.p`
@@ -31,18 +28,15 @@ const Description = styled.p`
   line-height: 20px;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0.0107692px;
   color: #14171a;
-  margin-top: 12.6px;
+  margin-top: 13px;
   margin-bottom: 11px;
 `;
 
 const Name = styled.span`
   font-family: HelveticaNeue;
-  line-height: 22px;
   font-size: 22px;
   font-weight: 700;
-  letter-spacing: 0.0169231px;
   color: #14171a;
   margin-bottom: 0;
 `;
@@ -52,16 +46,13 @@ const ProfileName = styled.span`
   line-height: 21px;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0.0107692px;
   color: #697787;
-  margin-right: 7.5px;
+  margin-right: 8px;
 `;
 
 const FollowerProfile = styled.span`
   font-family: HelveticaNeue;
-  line-height: 12px;
   font-size: 12px;
-  letter-spacing: 0.00846154px;
   color: #697787;
 `;
 
@@ -80,15 +71,13 @@ const InfoIcon = styled.img`
 `;
 
 const TitleIcon = styled.img`
-  margin-left: 5px;
-  margin-top: 1px;
+  margin: 1px 0 0 5px;
 `;
 
 const InfoText = styled.span`
   font-family: HelveticaNeue;
   line-height: 28px;
   font-size: 14px;
-  letter-spacing: 0.0107692px;
   color: #657786;
 `;
 
@@ -98,7 +87,6 @@ const InfoLink = styled.a`
   font-family: HelveticaNeue;
   line-height: 28px;
   font-size: 14px;
-  letter-spacing: 0.0107692px;
   color: #1d81c2;
 `;
 

@@ -5,8 +5,7 @@ const Wrap = styled.div`
   border: 1px solid #e1e8ed;
   border-radius: 4px;
   display: flex;
-  margin-right: 11px;
-  margin-bottom: 23px;
+  margin: 0 11px 23px 0;
   cursor: pointer;
 `;
 const Image = styled.img`
@@ -17,7 +16,7 @@ const Title = styled.h2`
   font-family: HelveticaNeue;
   line-height: 22px;
   font-size: 15px;
-  letter-spacing: -0.219231px;
+  letter-spacing: -0.2px;
   color: #000000;
   margin: 0;
 `;
@@ -26,7 +25,6 @@ const Description = styled.span`
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
-
   color: #000000;
 `;
 const Link = styled.a`
@@ -39,9 +37,7 @@ const Link = styled.a`
 `;
 
 const TextBlock = styled.div`
-  padding-left: 9px;
-  padding-top: 11px;
-  padding-bottom: 8px;
+  padding-top: 11px 0 8px 9px;
 `;
 
 const Preview = props => (

@@ -13,20 +13,15 @@ const Wrap = styled.div`
 
 const ListLink = styled.a`
   font-family: HelveticaNeue;
-  line-height: 1;
   font-size: 18px;
-  text-align: center;
   font-weight: 700;
-  letter-spacing: 0.00846154px;
   color: ${props => (props.active ? "#14171a" : "#1da1f2")};
   cursor: ${props => (props.active ? "default" : "pointer")};
   margin-right: 35px;
 `;
 
 const ListHeader = styled.div`
-  padding-top: 18px;
-  padding-bottom: 10px;
-  padding-left: 16px;
+  padding: 18px 0 10px 16px;
 `;
 
 const previewToVilijamis = {

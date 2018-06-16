@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import home from "./home-icon.svg";
+import homeIcon from "./home-icon.svg";
 import moments from "./moments-icon.svg";
 import notifications from "./notifications-icon.svg";
 import messages from "./messages-icon.svg";
@@ -15,26 +15,21 @@ const Wrap = styled.header`
 
 const TweetButton = styled.button`
   font-family: HelveticaNeue;
-  line-height: 14px;
   font-size: 14px;
-  text-align: center;
-  letter-spacing: 0.0107692px;
+  letter-spacing: 0.01px;
   color: #ffffff;
   background: #1da1f2;
-  border-radius: 100px;
+  border-radius: 15px;
   border: none;
   cursor: pointer;
-  margin-top: 6px;
-  margin-bottom: 7px;
-  padding-left: 16.7px;
-  padding-right: 15.9px;
+  margin: 7px 0;
+  padding: 0 16px;
 `;
 
 const NavLink = styled.a`
   font-family: HelveticaNeue;
   text-decoration: none;
   cursor: pointer;
-  line-height: normal;
   font-weight: 500;
   font-size: 13px;
   letter-spacing: 0.01px;
@@ -48,52 +43,42 @@ const NavLinkBlock = styled.div`
 `;
 
 const NavIcon = styled.img`
-  margin-right: 4.2px;
+  margin-right: 4px;
 `;
 
 const Navigation = styled.nav`
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   max-width: 412px;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  margin: 14px 0;
 `;
 
 const MainIcon = styled.img`
   margin-top: 16px;
-  margin-bottom: 12.5px;
+  margin-bottom: 13px;
 `;
 
 const SearchInput = styled.input`
   background: #f5f8fa;
-  border: 1px solid #e6ecf0;
-  box-sizing: border-box;
-  border-radius: 100px;
-  font-family: HelveticaNeue;
-  line-height: normal;
-  font-size: 12px;
-  letter-spacing: 0.00923077px;
-  color: #687b8a;
-  padding-left: 11px;
-  width: 220px;
-  padding-top: 9px;
-  padding-bottom: 8px;
   background-image: url(${search});
   background-repeat: no-repeat;
   background-position: 193px 9px;
-  margin-right: 17.88px;
-  margin-top: 6px;
-  margin-bottom: 7px;
+  border: 1px solid #e6ecf0;
+  border-radius: 15px;
+  box-sizing: border-box;
+  font-family: HelveticaNeue;
+  font-size: 12px;
+  color: #687b8a;
+  width: 220px;
+  margin: 7px 18px 7px 0;
+  padding: 9px 0 8px 11px;
 `;
 
 const Avatar = styled.img`
   cursor: pointer;
-  width: 26.24px;
-  height: 26.24px;
-  margin-top: 8.94px;
-  margin-bottom: 9.82px;
-  margin-right: 27.32px;
+  width: 26px;
+  height: 26px;
+  margin: 10px 27px 10px 0;
 `;
 
 const SearchBlock = styled.div`
@@ -108,7 +93,7 @@ const Header = props => (
         <div className="col-lg-5">
           <Navigation>
             <NavLinkBlock>
-              <NavIcon src={home} alt="" />
+              <NavIcon src={homeIcon} alt="" />
               <NavLink>Home</NavLink>
             </NavLinkBlock>
             <NavLinkBlock>

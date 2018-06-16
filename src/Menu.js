@@ -11,24 +11,20 @@ const MenuLink = styled.a`
   font-family: HelveticaNeue;
   line-height: 21px;
   font-size: 12px;
-  text-align: center;
   font-weight: 500;
-  letter-spacing: 0.00846154px;
   color: #707e88;
 `;
 
 const FollowButton = styled.button`
   border: 1px solid #1da1f2;
+  border-radius: 20px;
   box-sizing: border-box;
-  border-radius: 100px;
   background: white;
   cursor: pointer;
   font-weight: 700;
   color: #1da1f2;
   padding: 9px 27px;
-  margin-top: 12px;
-  margin-bottom: 11px;
-  margin-right: 18px;
+  margin: 12px 18px 11px 0;
 `;
 
 const MenuBlock = styled.div`
@@ -57,18 +53,15 @@ const MenuNumber = styled.span`
   line-height: 21px;
   font-size: 18px;
   font-weight: 700;
-  text-align: center;
-  letter-spacing: 0.00846154px;
   color: ${props => (props.active ? "#1da1f2" : "#788a98")};
 `;
 
 const MoreButton = styled.button`
-  appearance: none;
+  background-color: white;
   background-image: url(${more});
   background-repeat: no-repeat;
   background-position: center center;
   border: none;
-  background-color: white;
   width: 4px;
   height: 14px;
   cursor: pointer;
