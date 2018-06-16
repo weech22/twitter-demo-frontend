@@ -4,3 +4,11 @@ body {
   font-family: "Helvetica Neue", "Arial", sans-serif;
   background: #e6ecf0;
 }
+
+.active {
+  border-bottom: 4px solid #1da1f2;
+}
+
+.active > span {
+  color: #1da1f2;
+}

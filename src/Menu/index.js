@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import more from "./more-icon.svg";
 
 const Wrap = styled.div`
@@ -7,10 +8,9 @@ const Wrap = styled.div`
   box-shadow: 0px 2px 2px #b0b8be;
 `;
 
-const MenuLink = styled.a`
-  line-height: 21px;
+const LinkCaption = styled.span`
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 700;
   color: #707e88;
 `;
 
@@ -33,25 +33,28 @@ const MenuBlock = styled.div`
   height: 100%;
 `;
 
-const MenuTab = styled.div`
+const MenuTab = styled(NavLink)`
+  text-decoration: none;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin-top: 11px;
+  padding: 2px 0 4px 0;
   cursor: pointer;
-  border-bottom: ${props => (props.active ? "4px solid #1DA1F2" : "none")};
   &:hover {
     border-bottom: 4px solid #1da1f2;
   }
 `;
 
 const MenuNumber = styled.span`
-  line-height: 21px;
   font-size: 18px;
   font-weight: 700;
-  color: ${props => (props.active ? "#1da1f2" : "#788a98")};
+  color: #788a98;
+  margin-top: 2px;
+  ${MenuTab}:hover & {
+    color: #1da1f2;
+  }
 `;
 
 const MoreButton = styled.button`
@@ -71,24 +74,24 @@ const Menu = props => (
       <div className="row">
         <div className="col-lg-4 col-lg-offset-3">
           <MenuBlock>
-            <MenuTab active>
-              <MenuLink>Tweets</MenuLink>
-              <MenuNumber active>8,058</MenuNumber>
+            <MenuTab to="/">
+              <LinkCaption>Tweets</LinkCaption>
+              <MenuNumber>8,058</MenuNumber>
             </MenuTab>
-            <MenuTab>
-              <MenuLink>Following</MenuLink>
+            <MenuTab to="/following">
+              <LinkCaption>Following</LinkCaption>
               <MenuNumber>721</MenuNumber>
             </MenuTab>
-            <MenuTab>
-              <MenuLink>Followers</MenuLink>
+            <MenuTab to="/followers">
+              <LinkCaption>Followers</LinkCaption>
               <MenuNumber>1,815</MenuNumber>
             </MenuTab>
-            <MenuTab>
-              <MenuLink>Likes</MenuLink>
+            <MenuTab to="/likes">
+              <LinkCaption>Likes</LinkCaption>
               <MenuNumber>460</MenuNumber>
             </MenuTab>
-            <MenuTab>
-              <MenuLink>Lists</MenuLink>
+            <MenuTab to="/lists">
+              <LinkCaption>Lists</LinkCaption>
               <MenuNumber>2</MenuNumber>
             </MenuTab>
           </MenuBlock>
