@@ -63,7 +63,7 @@ const BigText = styled.p`
   line-height: 30px;
   font-size: 25px;
   font-weight: 200;
-  letter-spacing: 0.4px;
+
   color: #292f33;
   margin: 0 0 13px 0;
 `;

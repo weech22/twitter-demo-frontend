@@ -55,9 +55,11 @@ const TweetList = props => (
       image={postedImage}
     >
       We’ve made some more resources for all<br />you wonderful{" "}
-      <Link>#design</Link> folk<br />
-      <Link>everyinteraction.com/resources/</Link> <Link>#webdesign</Link>
-      <br /> <Link>#UI</Link>
+      <Link href="#">#design</Link> folk<br />
+      <Link href="#">everyinteraction.com/resources/</Link>{" "}
+      <Link href="#">#webdesign</Link>
+      <br />
+      <Link href="#">#UI</Link>
     </Post>
     <Post
       name="Every Interaction"
