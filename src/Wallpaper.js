@@ -12,6 +12,7 @@ const Background = styled.div`
 
 const Avatar = styled.img`
   position: relative;
+  cursor: pointer;
   left: 0px;
   top: 257px;
 `;
