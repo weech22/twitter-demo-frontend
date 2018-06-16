@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import homeIcon from "./home-icon.svg";
 import moments from "./moments-icon.svg";

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "./styles";
 import avatar from "./avatar.png";
@@ -6,7 +6,7 @@ import comments from "./comments-icon.svg";
 import retweets from "./retweets-icon.svg";
 import likes from "./likes-icon.svg";
 import loves from "./loves-icon.svg";
-import emails from "./emails-icon.svg";
+import envelope from "./envelope-icon.svg";
 import Preview from "./Preview";
 import pinned from "./pinned-icon.svg";
 
@@ -81,11 +81,11 @@ const Pin = styled.img`
   margin-bottom: 10px;
 `;
 
-const TweetAction = styled.div`
+const Action = styled.div`
   display: flex;
 `;
 
-const TweetActionCount = styled.span`
+const ActionCount = styled.span`
   font-family: HelveticaNeue;
   font-size: 13px;
   letter-spacing: -0.2px;
@@ -93,7 +93,7 @@ const TweetActionCount = styled.span`
   font-weight: ${props => (props.liked ? "bold" : "normal")};
 `;
 
-const TweetActionBlock = styled.div`
+const ActionBlock = styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 250px;
@@ -146,32 +146,25 @@ const Post = props => (
           <PostedImage src={props.image} />
         </ImageBlock>
       )}
-      <TweetActionBlock>
-        <TweetAction>
+      <ActionBlock>
+        <Action>
           <Icon src={comments} />
-          <TweetActionCount>
-            {props.comments > 0 && props.comments}
-          </TweetActionCount>
-        </TweetAction>
-        <TweetAction>
+          <ActionCount>{props.comments > 0 && props.comments}</ActionCount>
+        </Action>
+        <Action>
           <Icon src={retweets} />
-          <TweetActionCount>
-            {props.retweets > 0 && props.retweets}
-          </TweetActionCount>
-        </TweetAction>
-        <TweetAction>
+          <ActionCount>{props.retweets > 0 && props.retweets}</ActionCount>
+        </Action>
+        <Action>
           {props.liked ? <Icon src={loves} /> : <Icon src={likes} />}
-          <TweetActionCount liked={props.liked}>
+          <ActionCount liked={props.liked}>
             {props.likes > 0 && props.likes}
-          </TweetActionCount>
-        </TweetAction>
-        <TweetAction>
-          <Icon src={emails} />
-          <TweetActionCount>
-            {props.emails > 0 && props.emails}
-          </TweetActionCount>
-        </TweetAction>
-      </TweetActionBlock>
+          </ActionCount>
+        </Action>
+        <Action>
+          <Icon src={envelope} />
+        </Action>
+      </ActionBlock>
     </PostBlock>
   </Wrap>
 );

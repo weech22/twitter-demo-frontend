@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import wallpaper from "./profile-bg.jpg";
-import avatar from "./avatar.svg";
+import avatar from "./profile-picture.png";
 
 const Background = styled.div`
   height: 379px;

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import "./Fonts/fonts.css";
+import "./fonts/fonts.css";
 import Header from "./Header";
 import Wallpaper from "./Wallpaper";
 import Menu from "./Menu";

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import Post from "./Post";
 import { Link } from "./styles";
@@ -46,7 +46,6 @@ const TweetList = props => (
       comments={0}
       retweets={17}
       likes={47}
-      emails={0}
       bigFont
       pinned
       liked
@@ -64,7 +63,6 @@ const TweetList = props => (
       comments={1}
       retweets={4}
       likes={2}
-      emails={0}
       bigFont
     >
       Our new website concept; Taking you<br />from… @ Every Interaction<br />
@@ -77,7 +75,6 @@ const TweetList = props => (
       comments={0}
       retweets={0}
       likes={0}
-      emails={0}
       bigFont={false}
       preview={previewToVilijamis}
     >

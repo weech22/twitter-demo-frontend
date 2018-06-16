@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import more from "./more-icon.svg";
 
@@ -71,8 +71,7 @@ const Menu = props => (
   <Wrap>
     <div className="container">
       <div className="row">
-        <div className="col-lg-3" />
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-lg-offset-3">
           <MenuBlock>
             <MenuTab active>
               <MenuLink>Tweets</MenuLink>

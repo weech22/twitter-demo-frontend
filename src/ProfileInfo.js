@@ -1,8 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
-import location from "./location-icon.svg";
-import link from "./link-icon.svg";
-import joined from "./joined-icon.svg";
+import ProfileInfoLine from "./ProfileinfoLine";
 import tick from "./tick-icon.svg";
 
 const Wrap = styled.div`
@@ -56,46 +54,26 @@ const FollowerProfile = styled.span`
   color: #697787;
 `;
 
-const InfoLine = styled.div`
-  display: flex;
-`;
-
 const ButtonBlock = styled.div`
   margin-top: 17px;
   display: flex;
   justify-content: center;
 `;
 
-const InfoIcon = styled.img`
-  margin-right: 13px;
-`;
-
 const TitleIcon = styled.img`
   margin: 1px 0 0 5px;
 `;
 
-const InfoText = styled.span`
-  font-family: HelveticaNeue;
-  line-height: 28px;
-  font-size: 14px;
-  color: #657786;
-`;
-
-const InfoLink = styled.a`
-  text-decoration: none;
-  cursor: pointer;
-  font-family: HelveticaNeue;
-  line-height: 28px;
-  font-size: 14px;
-  color: #1d81c2;
+const Title = styled.div`
+  display: flex;
 `;
 
 const ProfileInfo = props => (
   <Wrap>
-    <InfoLine>
+    <Title>
       <Name>Every Interaction</Name>
       <TitleIcon src={tick} />
-    </InfoLine>
+    </Title>
     <ProfileName>@EveryInteract</ProfileName>
     <FollowerProfile>Follows you</FollowerProfile>
     <Description>
@@ -103,18 +81,9 @@ const ProfileInfo = props => (
       how<br />can we make things *work* amazing.
     </Description>
     <div>
-      <InfoLine>
-        <InfoIcon src={location} />
-        <InfoText>London, UK</InfoText>
-      </InfoLine>
-      <InfoLine>
-        <InfoIcon src={link} />
-        <InfoLink>everyinteraction.com</InfoLink>
-      </InfoLine>
-      <InfoLine>
-        <InfoIcon src={joined} />
-        <InfoText>Joined May 2008</InfoText>
-      </InfoLine>
+      <ProfileInfoLine location="London, UK" />
+      <ProfileInfoLine site="everyinteraction.com" />
+      <ProfileInfoLine joined="May 2008" />
     </div>
     <ButtonBlock>
       <ContactButton>Tweet to</ContactButton>
