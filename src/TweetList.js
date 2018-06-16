@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Post from "./Post";
-import { Link } from "./styles";
-import vilijamis from "./vilijamis.svg";
+import vilijamis from "./vilijamis.png";
 import postedImage from "./pinned-post-image.png";
 
 const Wrap = styled.div`
@@ -11,8 +10,12 @@ const Wrap = styled.div`
   width: 100%;
 `;
 
+const Link = styled.a`
+  text-decoration: none;
+  color: #72c4f6;
+`;
+
 const ListLink = styled.a`
-  font-family: HelveticaNeue;
   font-size: 18px;
   font-weight: 700;
   color: ${props => (props.active ? "#14171a" : "#1da1f2")};

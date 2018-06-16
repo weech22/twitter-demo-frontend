@@ -8,12 +8,12 @@ const Wrap = styled.div`
   margin: 0 11px 23px 0;
   cursor: pointer;
 `;
+
 const Image = styled.img`
   width: 126px;
   height: 126px;
 `;
 const Title = styled.h2`
-  font-family: HelveticaNeue;
   line-height: 22px;
   font-size: 15px;
   letter-spacing: -0.2px;
@@ -21,7 +21,6 @@ const Title = styled.h2`
   margin: 0;
 `;
 const Description = styled.span`
-  font-family: HelveticaNeue;
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
@@ -29,7 +28,6 @@ const Description = styled.span`
 `;
 const Link = styled.a`
   text-decoration: none;
-  font-family: HelveticaNeue;
   font-size: 15px;
   letter-spacing: -0.5px;
   color: #97a6b1;
@@ -37,7 +35,7 @@ const Link = styled.a`
 `;
 
 const TextBlock = styled.div`
-  padding-top: 11px 0 8px 9px;
+  padding: 11px 0 8px 9px;
 `;
 
 const Preview = props => (

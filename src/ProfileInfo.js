@@ -13,7 +13,6 @@ const ContactButton = styled.button`
   border-radius: 20px;
   border: none;
   color: white;
-  font-family: HelveticaNeue;
   font-size: 14px;
   font-weight: 500;
   width: 128px;
@@ -22,7 +21,6 @@ const ContactButton = styled.button`
 `;
 
 const Description = styled.p`
-  font-family: HelveticaNeue;
   line-height: 20px;
   font-size: 14px;
   font-weight: 400;
@@ -32,7 +30,6 @@ const Description = styled.p`
 `;
 
 const Name = styled.span`
-  font-family: HelveticaNeue;
   font-size: 22px;
   font-weight: 700;
   color: #14171a;
@@ -40,7 +37,6 @@ const Name = styled.span`
 `;
 
 const ProfileName = styled.span`
-  font-family: HelveticaNeue;
   line-height: 21px;
   font-size: 14px;
   font-weight: 400;
@@ -49,7 +45,6 @@ const ProfileName = styled.span`
 `;
 
 const FollowerProfile = styled.span`
-  font-family: HelveticaNeue;
   font-size: 12px;
   color: #697787;
 `;

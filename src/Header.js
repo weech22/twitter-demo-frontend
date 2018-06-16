@@ -14,7 +14,6 @@ const Wrap = styled.header`
 `;
 
 const TweetButton = styled.button`
-  font-family: HelveticaNeue;
   font-size: 14px;
   letter-spacing: 0.01px;
   color: #ffffff;
@@ -27,7 +26,6 @@ const TweetButton = styled.button`
 `;
 
 const NavLink = styled.a`
-  font-family: HelveticaNeue;
   text-decoration: none;
   cursor: pointer;
   font-weight: 500;
@@ -66,7 +64,6 @@ const SearchInput = styled.input`
   border: 1px solid #e6ecf0;
   border-radius: 15px;
   box-sizing: border-box;
-  font-family: HelveticaNeue;
   font-size: 12px;
   color: #687b8a;
   width: 220px;

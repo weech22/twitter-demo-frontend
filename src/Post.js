@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "./styles";
+import Preview from "./Preview";
 import avatar from "./avatar.png";
 import comments from "./comments-icon.svg";
 import retweets from "./retweets-icon.svg";
 import likes from "./likes-icon.svg";
 import loves from "./loves-icon.svg";
 import envelope from "./envelope-icon.svg";
-import Preview from "./Preview";
 import pinned from "./pinned-icon.svg";
 
 const Wrap = styled.div`
@@ -32,7 +31,6 @@ const AvatarBlock = styled.div`
 `;
 
 const Name = styled.span`
-  font-family: HelveticaNeue;
   line-height: 19px;
   font-weight: 500;
   font-size: 15px;
@@ -41,7 +39,6 @@ const Name = styled.span`
 `;
 
 const ProfileName = styled.span`
-  font-family: HelveticaNeue;
   line-height: 19px;
   font-size: 13px;
   font-weight: 400;
@@ -54,7 +51,6 @@ const AvatarImage = styled.img`
 `;
 
 const Text = styled.p`
-  font-family: HelveticaNeue;
   line-height: 22px;
   font-size: 16px;
   font-weight: 400;
@@ -64,7 +60,6 @@ const Text = styled.p`
 `;
 
 const BigText = styled.p`
-  font-family: HelveticaNeue;
   line-height: 30px;
   font-size: 25px;
   font-weight: 200;
@@ -86,7 +81,6 @@ const Action = styled.div`
 `;
 
 const ActionCount = styled.span`
-  font-family: HelveticaNeue;
   font-size: 13px;
   letter-spacing: -0.2px;
   color: ${props => (props.liked ? "#E2264D" : "#667580")};
@@ -100,7 +94,6 @@ const ActionBlock = styled.div`
 `;
 
 const Pinned = styled.span`
-  font-family: HelveticaNeue;
   font-size: 12px;
   letter-spacing: -0.2px;
   color: #707e88;

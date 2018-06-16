@@ -5,7 +5,6 @@ import link from "./link-icon.svg";
 import joined from "./joined-icon.svg";
 
 const Text = styled.span`
-  font-family: HelveticaNeue;
   line-height: 28px;
   font-size: 14px;
   color: #657786;
@@ -22,7 +21,6 @@ const Icon = styled.img`
 const Link = styled.a`
   text-decoration: none;
   cursor: pointer;
-  font-family: HelveticaNeue;
   line-height: 28px;
   font-size: 14px;
   color: #1d81c2;

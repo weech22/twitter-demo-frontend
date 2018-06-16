@@ -8,7 +8,6 @@ const Wrap = styled.div`
 `;
 
 const MenuLink = styled.a`
-  font-family: HelveticaNeue;
   line-height: 21px;
   font-size: 12px;
   font-weight: 500;
@@ -49,7 +48,6 @@ const MenuTab = styled.div`
 `;
 
 const MenuNumber = styled.span`
-  font-family: HelveticaNeue;
   line-height: 21px;
   font-size: 18px;
   font-weight: 700;
