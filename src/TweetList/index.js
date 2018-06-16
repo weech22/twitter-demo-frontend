@@ -23,10 +23,12 @@ const ListLink = styled(NavLink)`
   font-weight: 700;
   cursor: pointer;
   margin-right: 35px;
-`;
-
-const LinkCaption = styled.span`
   color: #1da1f2;
+
+  &.active {
+    color: black;
+    cursor: default;
+  }
 `;
 
 const ListHeader = styled.div`
@@ -44,14 +46,12 @@ const previewToVilijamis = {
 const TweetList = props => (
   <Wrap>
     <ListHeader>
-      <ListLink to="/" activeClassName="tweet-list">
-        <LinkCaption>Tweets</LinkCaption>
-      </ListLink>
+      <ListLink to="/">Tweets</ListLink>
       <ListLink to="/replies" activeClassName="tweet-list">
-        <LinkCaption>Tweets & replies</LinkCaption>
+        Tweets & replies
       </ListLink>
       <ListLink to="/media" activeClassName="tweet-list">
-        <LinkCaption>Media</LinkCaption>
+        Media
       </ListLink>
     </ListHeader>
     <Post

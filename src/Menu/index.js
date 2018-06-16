@@ -42,8 +42,14 @@ const MenuTab = styled(NavLink)`
   margin-top: 11px;
   padding: 2px 0 4px 0;
   cursor: pointer;
+
   &:hover {
     border-bottom: 4px solid #1da1f2;
+  }
+
+  &.active {
+    border-bottom: 4px solid #1da1f2;
+    color: #1da1f2;
   }
 `;
 
@@ -52,7 +58,12 @@ const MenuNumber = styled.span`
   font-weight: 700;
   color: #788a98;
   margin-top: 2px;
+
   ${MenuTab}:hover & {
+    color: #1da1f2;
+  }
+
+  ${MenuTab}.active & {
     color: #1da1f2;
   }
 `;
@@ -74,23 +85,23 @@ const Menu = props => (
       <div className="row">
         <div className="col-lg-4 col-lg-offset-3">
           <MenuBlock>
-            <MenuTab to="/everyinteract" activeClassName="menu">
+            <MenuTab to="/everyinteract">
               <LinkCaption>Tweets</LinkCaption>
               <MenuNumber>8,058</MenuNumber>
             </MenuTab>
-            <MenuTab to="/following" activeClassName="menu">
+            <MenuTab to="/following">
               <LinkCaption>Following</LinkCaption>
               <MenuNumber>721</MenuNumber>
             </MenuTab>
-            <MenuTab to="/followers" activeClassName="menu">
+            <MenuTab to="/followers">
               <LinkCaption>Followers</LinkCaption>
               <MenuNumber>1,815</MenuNumber>
             </MenuTab>
-            <MenuTab to="/likes" activeClassName="menu">
+            <MenuTab to="/likes">
               <LinkCaption>Likes</LinkCaption>
               <MenuNumber>460</MenuNumber>
             </MenuTab>
-            <MenuTab to="/lists" activeClassName="menu">
+            <MenuTab to="/lists">
               <LinkCaption>Lists</LinkCaption>
               <MenuNumber>2</MenuNumber>
             </MenuTab>

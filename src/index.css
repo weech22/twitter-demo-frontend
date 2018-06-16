@@ -4,16 +4,3 @@ body {
   font-family: "Helvetica Neue", "Arial", sans-serif;
   background: #e6ecf0;
 }
-
-.tweet-list > span {
-  color: black;
-  cursor: default;
-}
-
-.menu {
-  border-bottom: 4px solid #1da1f2;
-}
-
-.menu > span {
-  color: #1da1f2;
-}
