@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import Preview from "./Preview";
-
-import pinned from "./pinned-icon.svg";
-import comments from "./comments-icon.svg";
-import retweets from "./retweets-icon.svg";
-import likes from "./likes-icon.svg";
-import loves from "./loves-icon.svg";
-import envelope from "./envelope-icon.svg";
+import pinnedIcon from "./pinned-icon.svg";
+import commentsIcon from "./comments-icon.svg";
+import retweetsIcon from "./retweets-icon.svg";
+import likesIcon from "./likes-icon.svg";
+import lovesIcon from "./loves-icon.svg";
+import envelopeIcon from "./envelope-icon.svg";
 
 const avatar = `${process.env.PUBLIC_URL}/avatar.png`;
 
@@ -116,7 +115,7 @@ const PostedImage = styled.img`
 const Post = props => (
   <Wrap>
     <AvatarBlock pinned={props.pinned}>
-      {props.pinned && <Pin src={pinned} />}
+      {props.pinned && <Pin src={pinnedIcon} />}
       <AvatarImage src={avatar} />
     </AvatarBlock>
     <PostBlock>
@@ -145,21 +144,21 @@ const Post = props => (
       )}
       <ActionBlock>
         <Action>
-          <Icon src={comments} />
+          <Icon src={commentsIcon} />
           <ActionCount>{props.comments > 0 && props.comments}</ActionCount>
         </Action>
         <Action>
-          <Icon src={retweets} />
+          <Icon src={retweetsIcon} />
           <ActionCount>{props.retweets > 0 && props.retweets}</ActionCount>
         </Action>
         <Action>
-          {props.liked ? <Icon src={loves} /> : <Icon src={likes} />}
+          {props.liked ? <Icon src={lovesIcon} /> : <Icon src={likesIcon} />}
           <ActionCount liked={props.liked}>
             {props.likes > 0 && props.likes}
           </ActionCount>
         </Action>
         <Action>
-          <Icon src={envelope} />
+          <Icon src={envelopeIcon} />
         </Action>
       </ActionBlock>
     </PostBlock>
