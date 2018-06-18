@@ -6,7 +6,7 @@ import Menu from "./Menu";
 import ProfileInfo from "./ProfileInfo";
 import TweetList from "./TweetList";
 
-const EveryInteract = () => (
+const ProfilePage = () => (
   <div>
     <Helmet>
       <title>Every Interaction (@EveryInteract)</title>
@@ -31,4 +31,4 @@ const EveryInteract = () => (
   </div>
 );
 
-export default EveryInteract;
+export default ProfilePage;

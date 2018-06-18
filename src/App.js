@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { Redirect } from "react-router";
 import { Helmet } from "react-helmet";
 
-import EveryInteract from "./EveryInteract";
+import ProfilePage from "./ProfilePage";
 
 const App = props => (
   <div>
@@ -13,7 +13,7 @@ const App = props => (
     <BrowserRouter>
       <div>
         <Route render={() => <Redirect to="/everyinteract" />} />
-        <Route path="/everyinteract" component={EveryInteract} />
+        <Route path="/everyinteract" component={ProfilePage} />
       </div>
     </BrowserRouter>
   </div>
