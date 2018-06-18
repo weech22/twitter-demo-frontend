@@ -44,7 +44,7 @@ const Preview = props => (
     <TextBlock>
       <Title>{props.title}</Title>
       <Description>{props.children}</Description>
-      <Link>{props.link}</Link>
+      <Link href="#">{props.link}</Link>
     </TextBlock>
   </Wrap>
 );

@@ -86,19 +86,19 @@ const Menu = props => (
               <LinkCaption>Tweets</LinkCaption>
               <MenuNumber>8,058</MenuNumber>
             </MenuTab>
-            <MenuTab to="/following">
+            <MenuTab exact to="/">
               <LinkCaption>Following</LinkCaption>
               <MenuNumber>721</MenuNumber>
             </MenuTab>
-            <MenuTab to="/followers">
+            <MenuTab exact to="/">
               <LinkCaption>Followers</LinkCaption>
               <MenuNumber>1,815</MenuNumber>
             </MenuTab>
-            <MenuTab to="/likes">
+            <MenuTab exact to="/">
               <LinkCaption>Likes</LinkCaption>
               <MenuNumber>460</MenuNumber>
             </MenuTab>
-            <MenuTab to="/lists">
+            <MenuTab exact to="/">
               <LinkCaption>Lists</LinkCaption>
               <MenuNumber>2</MenuNumber>
             </MenuTab>
