@@ -12,7 +12,7 @@ const App = props => (
     </Helmet>
     <BrowserRouter>
       <div>
-        <Route render={() => <Redirect to="/everyinteract" />} />
+        <Redirect from="/" to="/everyinteract" />
         <Route path="/everyinteract" component={ProfilePage} />
       </div>
     </BrowserRouter>

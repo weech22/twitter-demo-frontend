@@ -66,7 +66,7 @@ const SearchInput = styled.input`
   font-size: 12px;
   color: #687b8a;
   width: 220px;
-  margin: 7px 18px 7px 0;
+  margin: 6px 18px 7px 0;
   padding: 9px 0 8px 11px;
 `;
 
