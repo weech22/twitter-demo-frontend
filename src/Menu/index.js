@@ -59,10 +59,7 @@ const MenuNumber = styled.span`
   color: #788a98;
   margin-top: 2px;
 
-  ${MenuTab}:hover & {
-    color: #1da1f2;
-  }
-
+  ${MenuTab}:hover &,
   ${MenuTab}.active & {
     color: #1da1f2;
   }

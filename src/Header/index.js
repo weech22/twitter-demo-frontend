@@ -31,9 +31,8 @@ const Link = styled.a`
   cursor: pointer;
   font-weight: 500;
   font-size: 13px;
-  letter-spacing: 0.01px;
+  letter-spacing: 0.1px;
   color: #667580;
-  margin-top: 1px;
 `;
 
 const LinkBlock = styled.div`
@@ -48,13 +47,12 @@ const Icon = styled.img`
 const Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
-  max-width: 412px;
+
   margin: 14px 0;
 `;
 
 const MainIcon = styled.img`
-  margin-top: 16px;
-  margin-bottom: 13px;
+  margin-top: 15px;
 `;
 
 const SearchInput = styled.input`
@@ -88,7 +86,7 @@ const Header = props => (
   <Wrap>
     <div className="container">
       <div className="row">
-        <div className="col-lg-5">
+        <div className="col-lg-4">
           <Navigation>
             <LinkBlock>
               <Icon src={homeIcon} alt="" />
@@ -108,10 +106,10 @@ const Header = props => (
             </LinkBlock>
           </Navigation>
         </div>
-        <div className="col-lg-2 center-lg">
+        <div className="col-lg-2 center-lg col-lg-offset-1">
           <MainIcon src={logo} />
         </div>
-        <div className="col-lg-5">
+        <div className="col-lg-4 col-lg-offset-1">
           <SearchBlock>
             <SearchInput placeholder="Search Twitter" />
             <Avatar src={avatar} />
