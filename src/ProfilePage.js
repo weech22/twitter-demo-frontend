@@ -6,6 +6,7 @@ import Menu from "./Menu";
 import ProfileInfo from "./ProfileInfo";
 import TweetList from "./TweetList";
 import FollowSuggestions from "./FollowSuggestions";
+import Trends from "./Trends";
 
 const ProfilePage = () => (
   <div>
@@ -29,6 +30,7 @@ const ProfilePage = () => (
         </div>
         <div className="col-lg-3">
           <FollowSuggestions />
+          <Trends />
         </div>
       </div>
     </div>
