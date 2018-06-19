@@ -52,7 +52,7 @@ const FollowerProfile = styled.span`
 const ButtonBlock = styled.div`
   margin-top: 17px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 const TitleIcon = styled.img`

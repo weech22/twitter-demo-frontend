@@ -8,6 +8,7 @@ import TweetList from "./TweetList";
 import FollowSuggestions from "./FollowSuggestions";
 import Trends from "./Trends";
 import Copyright from "./Copyright";
+import FamiliarFollowers from "./FamiliarFollowers";
 
 const ProfilePage = () => (
   <div>
@@ -25,6 +26,7 @@ const ProfilePage = () => (
       <div className="row">
         <div className="col-lg-3">
           <ProfileInfo />
+          <FamiliarFollowers />
         </div>
         <div className="col-lg-6">
           <TweetList />
