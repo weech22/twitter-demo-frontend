@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import followersIcon from "./followers-icon.svg";
-import avatar1 from "./avatars/1.jpg";
-import avatar2 from "./avatars/2.jpg";
-import avatar3 from "./avatars/3.jpg";
-import avatar4 from "./avatars/4.jpg";
-import avatar5 from "./avatars/5.jpg";
-import avatar6 from "./avatars/6.jpg";
+const avatar1 = `${process.env.PUBLIC_URL}/avatars/1.jpg`;
+const avatar2 = `${process.env.PUBLIC_URL}/avatars/2.jpg`;
+const avatar3 = `${process.env.PUBLIC_URL}/avatars/3.jpg`;
+const avatar4 = `${process.env.PUBLIC_URL}/avatars/4.jpg`;
+const avatar5 = `${process.env.PUBLIC_URL}/avatars/5.jpg`;
+const avatar6 = `${process.env.PUBLIC_URL}/avatars/6.jpg`;
 
 const Wrap = styled.div`
   margin-top: 18px;

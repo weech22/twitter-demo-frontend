@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import mediaIcon from "./media-icon.svg";
-import photo1 from "./photos/1.jpg";
-import photo2 from "./photos/2.jpg";
-import photo3 from "./photos/3.jpg";
-import photo4 from "./photos/4.jpg";
-import photo5 from "./photos/5.jpg";
-import photo6 from "./photos/6.jpg";
+const photo1 = `${process.env.PUBLIC_URL}/photos/1.jpg`;
+const photo2 = `${process.env.PUBLIC_URL}/photos/2.jpg`;
+const photo3 = `${process.env.PUBLIC_URL}/photos/3.jpg`;
+const photo4 = `${process.env.PUBLIC_URL}/photos/4.jpg`;
+const photo5 = `${process.env.PUBLIC_URL}/photos/5.jpg`;
+const photo6 = `${process.env.PUBLIC_URL}/photos/6.jpg`;
 
 const Wrap = styled.div`
   margin-top: 31px;
