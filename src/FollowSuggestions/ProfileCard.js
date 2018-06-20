@@ -4,6 +4,7 @@ import tickIcon from "./tick-icon.svg";
 import crossIcon from "./cross-icon.svg";
 
 const Wrap = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid #e6ecf0;
@@ -50,6 +51,9 @@ const Tick = styled.img`
 
 const CloseButton = styled.button`
   cursor: pointer;
+  position: absolute;
+  right: 1px;
+  top: 15px;
   width: 8px;
   height: 8px;
   background-color: white;
@@ -88,6 +92,7 @@ const ProfileCard = props => (
       </NameSection>
       <Button>Follow</Button>
     </MainSection>
+    <CloseButton />
   </Wrap>
 );
 
