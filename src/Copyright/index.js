@@ -14,7 +14,6 @@ const Link = styled.a`
   text-decoration: none;
   line-height: 18px;
   font-size: 13px;
-  letter-spacing: -0.4px;
   font-weight: 400;
   color: #718290;
   &:hover {
