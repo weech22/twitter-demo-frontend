@@ -68,11 +68,12 @@ const MainIcon = styled.img`
   cursor: pointer;
 `;
 
+const SearchForm = styled.form`
+  position: relative;
+`;
+
 const SearchInput = styled.input`
   background: #f5f8fa;
-  background-image: url(${search});
-  background-repeat: no-repeat;
-  background-position: 193px 9px;
   border: 1px solid #e6ecf0;
   border-radius: 15px;
   box-sizing: border-box;
@@ -81,6 +82,20 @@ const SearchInput = styled.input`
   width: 220px;
   margin: 7px 18px 7px 0;
   padding: 8px 0 8px 11px;
+`;
+
+const SearchButton = styled.input`
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  background: #f5f8fa;
+  background-image: url(${search});
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
+  position: absolute;
+  left: 193px;
+  top: 15px;
 `;
 
 const Avatar = styled.img`
@@ -124,7 +139,10 @@ const Header = props => (
         </div>
         <div className="col-lg-4 col-lg-offset-1">
           <SearchBlock>
-            <SearchInput placeholder="Search Twitter" />
+            <SearchForm>
+              <SearchInput placeholder="Search Twitter" />
+              <SearchButton type="button" />
+            </SearchForm>
             <Avatar src={avatar} />
             <TweetButton>Tweet</TweetButton>
           </SearchBlock>
