@@ -27,7 +27,6 @@ const Name = styled.span`
   margin-right: 7px;
   line-height: 18px;
   font-size: 13px;
-  letter-spacing: -0.4px;
   font-weight: 400;
   color: #718290;
 `;
