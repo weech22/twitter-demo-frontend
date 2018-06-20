@@ -11,10 +11,14 @@ import envelopeIcon from "./envelope-icon.svg";
 const avatar = `${process.env.PUBLIC_URL}/avatar.png`;
 
 const Wrap = styled.div`
+  cursor: pointer;
   padding: 8px 0 12px 18px;
   display: flex;
   flex-direction: row;
   border-top: 1px solid #e1e8ed;
+  &:hover {
+    background: #f5f8fa;
+  }
 `;
 
 const PostBlock = styled.div`

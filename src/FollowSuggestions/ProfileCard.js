@@ -16,14 +16,6 @@ const Avatar = styled.img`
   cursor: pointer;
 `;
 
-const Name = styled.span`
-  line-height: 17px;
-  font-size: 13px;
-  color: #333333;
-  font-weight: 700;
-  margin-left: 2px;
-`;
-
 const ProfileName = styled.span`
   line-height: 17px;
   font-size: 13px;
@@ -43,6 +35,9 @@ const Button = styled.button`
   font-weight: 500;
   color: #1da1f2;
   align-self: flex-start;
+  &:hover {
+    background: #e5f0f8;
+  }
 `;
 
 const Tick = styled.img`
@@ -68,6 +63,9 @@ const NameSection = styled.div`
   flex-direction: row;
   align-items: center;
   margin-bottom: 9px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const MainSection = styled.div`
@@ -77,6 +75,18 @@ const MainSection = styled.div`
 
 const AvatarSection = styled.div`
   margin-right: 10px;
+`;
+
+const Name = styled.span`
+  line-height: 17px;
+  font-size: 13px;
+  color: #333333;
+  font-weight: 700;
+  margin-left: 2px;
+  ${NameSection}:hover & {
+    text-decoration: underline;
+    color: #0072bb;
+  }
 `;
 
 const ProfileCard = props => (

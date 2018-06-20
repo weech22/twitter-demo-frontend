@@ -17,11 +17,24 @@ const Link = styled.a`
   letter-spacing: -0.4px;
   font-weight: 400;
   color: #718290;
+  &:hover {
+    color: #0072bb;
+    text-decoration: underline;
+  }
+`;
+
+const Name = styled.span`
+  margin-right: 7px;
+  line-height: 18px;
+  font-size: 13px;
+  letter-spacing: -0.4px;
+  font-weight: 400;
+  color: #718290;
 `;
 
 const Copyright = () => (
   <Wrap>
-    <Link href="#">© 2018 Twitter</Link>
+    <Name>© 2018 Twitter</Name>
     <Link href="#">About</Link>
     <Link href="#">Help Center</Link>
     <Link href="#">Terms</Link>

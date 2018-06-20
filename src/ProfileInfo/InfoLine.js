@@ -24,6 +24,9 @@ const Link = styled.a`
   line-height: 28px;
   font-size: 14px;
   color: #1d81c2;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const ProfileInfoLine = props => (

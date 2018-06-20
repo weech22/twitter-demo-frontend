@@ -28,6 +28,10 @@ const ListLink = styled(NavLink)`
     color: black;
     cursor: default;
   }
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const ListHeader = styled.div`

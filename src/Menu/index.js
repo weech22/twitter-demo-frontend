@@ -24,6 +24,9 @@ const FollowButton = styled.button`
   color: #1da1f2;
   padding: 9px 27px;
   margin: 12px 18px 11px 0;
+  &:hover {
+    background: #e5f0f8;
+  }
 `;
 
 const MenuBlock = styled.div`

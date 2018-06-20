@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrap = styled.div`
+  cursor: pointer;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
@@ -13,6 +14,9 @@ const Trend = styled.a`
   line-height: 20px;
   font-size: 15px;
   color: #1da1f2;
+  ${Wrap}:hover & {
+    text-decoration: underline;
+  }
 `;
 
 const SubTitle = styled.span`

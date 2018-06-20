@@ -22,6 +22,9 @@ const Link = styled.a`
   font-size: 14px;
   color: #1da1f2;
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const Image = styled.img`

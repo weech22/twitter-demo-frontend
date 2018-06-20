@@ -18,6 +18,9 @@ const ContactButton = styled.button`
   width: 128px;
   height: 39px;
   margin: 0 3px;
+  &:hover {
+    background: #0072bb;
+  }
 `;
 
 const Description = styled.p`
@@ -30,18 +33,26 @@ const Description = styled.p`
 `;
 
 const Name = styled.span`
+  cursor: pointer;
   font-size: 22px;
   font-weight: 700;
   color: #14171a;
   margin-bottom: 0;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const ProfileName = styled.span`
+  cursor: pointer;
   line-height: 21px;
   font-size: 14px;
   font-weight: 400;
   color: #697787;
   margin-right: 8px;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const FollowerProfile = styled.span`

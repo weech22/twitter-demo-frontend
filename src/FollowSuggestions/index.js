@@ -9,10 +9,7 @@ import eAvatar from "./epiphany.png";
 const Wrap = styled.div`
   background: white;
   margin-top: 9px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 15px;
-  padding-bottom: 19px;
+  padding: 9px 16px 19px;
 `;
 
 const Title = styled.span`
@@ -26,6 +23,9 @@ const Action = styled.a`
   font-size: 12px;
   color: #1da1f2;
   letter-spacing: -0.2px;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const Icon = styled.img`

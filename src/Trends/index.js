@@ -23,6 +23,9 @@ const Action = styled.a`
   font-size: 12px;
   color: #1da1f2;
   letter-spacing: -0.2px;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const Dot = styled.span`
