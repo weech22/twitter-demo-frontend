@@ -5,6 +5,11 @@ import Wallpaper from "./Wallpaper";
 import Menu from "./Menu";
 import ProfileInfo from "./ProfileInfo";
 import TweetList from "./TweetList";
+import FollowSuggestions from "./FollowSuggestions";
+import Trends from "./Trends";
+import Copyright from "./Copyright";
+import FamiliarFollowers from "./FamiliarFollowers";
+import Media from "./Media";
 
 const ProfilePage = () => (
   <div>
@@ -22,9 +27,16 @@ const ProfilePage = () => (
       <div className="row">
         <div className="col-lg-3">
           <ProfileInfo />
+          <FamiliarFollowers />
+          <Media />
         </div>
         <div className="col-lg-6">
           <TweetList />
+        </div>
+        <div className="col-lg-3">
+          <FollowSuggestions />
+          <Trends />
+          <Copyright />
         </div>
       </div>
     </div>

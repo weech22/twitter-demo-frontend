@@ -9,7 +9,6 @@ const postedImage = `${process.env.PUBLIC_URL}/pinned-post-image.png`;
 const Wrap = styled.div`
   background: white;
   margin-top: 9px;
-  width: 100%;
 `;
 
 const Link = styled.a`
@@ -28,6 +27,10 @@ const ListLink = styled(NavLink)`
   &.active {
     color: black;
     cursor: default;
+  }
+
+  &:hover {
+    text-decoration: underline;
   }
 `;
 

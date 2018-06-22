@@ -24,6 +24,21 @@ const TweetButton = styled.button`
   cursor: pointer;
   margin: 7px 0;
   padding: 0 16px;
+  &:hover {
+    background: #0072bb;
+  }
+`;
+
+const LinkBlock = styled.div`
+  cursor: pointer;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    border-bottom: 4px solid #1da1f2;
+    padding-top: 4px;
+  }
 `;
 
 const Link = styled.a`
@@ -33,11 +48,9 @@ const Link = styled.a`
   font-size: 13px;
   letter-spacing: 0.1px;
   color: #667580;
-`;
-
-const LinkBlock = styled.div`
-  display: flex;
-  align-items: center;
+  ${LinkBlock}:hover & {
+    color: #1da1f2;
+  }
 `;
 
 const Icon = styled.img`
@@ -47,19 +60,20 @@ const Icon = styled.img`
 const Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
-
-  margin: 14px 0;
+  height: 100%;
 `;
 
 const MainIcon = styled.img`
   margin-top: 15px;
+  cursor: pointer;
+`;
+
+const SearchForm = styled.form`
+  position: relative;
 `;
 
 const SearchInput = styled.input`
   background: #f5f8fa;
-  background-image: url(${search});
-  background-repeat: no-repeat;
-  background-position: 193px 9px;
   border: 1px solid #e6ecf0;
   border-radius: 15px;
   box-sizing: border-box;
@@ -68,6 +82,20 @@ const SearchInput = styled.input`
   width: 220px;
   margin: 7px 18px 7px 0;
   padding: 8px 0 8px 11px;
+`;
+
+const SearchButton = styled.input`
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  background: #f5f8fa;
+  background-image: url(${search});
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
+  position: absolute;
+  left: 193px;
+  top: 15px;
 `;
 
 const Avatar = styled.img`
@@ -86,7 +114,7 @@ const Header = props => (
   <Wrap>
     <div className="container">
       <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-5">
           <Navigation>
             <LinkBlock>
               <Icon src={homeIcon} alt="" />
@@ -106,12 +134,15 @@ const Header = props => (
             </LinkBlock>
           </Navigation>
         </div>
-        <div className="col-lg-2 center-lg col-lg-offset-1">
+        <div className="col-lg-2 center-lg">
           <MainIcon src={logo} />
         </div>
         <div className="col-lg-4 col-lg-offset-1">
           <SearchBlock>
-            <SearchInput placeholder="Search Twitter" />
+            <SearchForm>
+              <SearchInput placeholder="Search Twitter" />
+              <SearchButton type="button" />
+            </SearchForm>
             <Avatar src={avatar} />
             <TweetButton>Tweet</TweetButton>
           </SearchBlock>
