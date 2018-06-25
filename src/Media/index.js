@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import mediaIcon from "./media-icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import mediaIcon from './media-icon.svg';
+
 const photo1 = `${process.env.PUBLIC_URL}/photos/1.jpg`;
 const photo2 = `${process.env.PUBLIC_URL}/photos/2.jpg`;
 const photo3 = `${process.env.PUBLIC_URL}/photos/3.jpg`;
@@ -53,7 +54,9 @@ const Media = () => (
   <Wrap>
     <TitleBlock>
       <Icon src={mediaIcon} />
-      <Link href="#">522 Photos and videos</Link>
+      <Link href="#">
+522 Photos and videos
+      </Link>
     </TitleBlock>
     <ImageSection>
       <ImageLink href="#">

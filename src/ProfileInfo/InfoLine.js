@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import location from "./location-icon.svg";
-import link from "./link-icon.svg";
-import joined from "./joined-icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import locationIcon from './location-icon.svg';
+import linkIcon from './link-icon.svg';
+import joinedIcon from './joined-icon.svg';
 
 const Text = styled.span`
   line-height: 28px;
@@ -29,17 +29,23 @@ const Link = styled.a`
   }
 `;
 
-const ProfileInfoLine = props => (
-  <Line>
-    {props.location && <Icon src={location} />}
-    {props.site && <Icon src={link} />}
-    {props.joined && <Icon src={joined} />}
-    <Text>
-      {props.location ||
-        (props.site && <Link>{props.site}</Link>) ||
-        (props.joined && `Joined ${props.joined}`)}
-    </Text>
-  </Line>
-);
+const ProfileInfoLine = (props) => {
+  const { location, site, joined } = props;
+
+  return (
+    <Line>
+      {location && <Icon src={locationIcon} />}
+      {site && <Icon src={linkIcon} />}
+      {joined && <Icon src={joinedIcon} />}
+      <Text>
+        {location || (site && (
+        <Link>
+          {site}
+        </Link>
+        )) || (joined && `Joined ${joined}`)}
+      </Text>
+    </Line>
+  );
+};
 
 export default ProfileInfoLine;

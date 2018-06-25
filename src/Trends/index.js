@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import TrendLine from "./TrendLine";
+import React from 'react';
+import styled from 'styled-components';
+import TrendLine from './TrendLine';
 
 const Wrap = styled.div`
   background: white;
@@ -34,22 +34,42 @@ const TrendSection = styled.div`
   margin-top: 14px;
 `;
 
-const Separator = () => <Dot> • </Dot>;
+const Separator = () => (
+  <Dot>
+    {' '}
+    {'•'}
+    {' '}
+  </Dot>
+);
 
 const Trends = () => (
   <Wrap>
-    <Title>United Kingdom Trends</Title>
+    <Title>
+      {'United Kingdom Trends'}
+    </Title>
     <Separator />
-    <Action href="#">Change</Action>
+    <Action href="#">
+Change
+    </Action>
     <TrendSection>
-      <TrendLine>#BringYourDogToWorkDay</TrendLine>
-      <TrendLine subTitle="12.1K Tweets">#FridayFeeling</TrendLine>
+      <TrendLine>
+#BringYourDogToWorkDay
+      </TrendLine>
+      <TrendLine subTitle="12.1K Tweets">
+#FridayFeeling
+      </TrendLine>
       <TrendLine subTitle="It’s one year since the UK voted to leave the European Union">
         #BrexitAnniversary
       </TrendLine>
-      <TrendLine subTitle="1,036 Tweets">HMS Queen Elizabeth</TrendLine>
-      <TrendLine subTitle="1,036 Tweets">Joe Budden</TrendLine>
-      <TrendLine subTitle="6,136 Tweets">Trident</TrendLine>
+      <TrendLine subTitle="1,036 Tweets">
+HMS Queen Elizabeth
+      </TrendLine>
+      <TrendLine subTitle="1,036 Tweets">
+Joe Budden
+      </TrendLine>
+      <TrendLine subTitle="6,136 Tweets">
+Trident
+      </TrendLine>
     </TrendSection>
   </Wrap>
 );

@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-import vilijamis from "./vilijamis.png";
-import Post from "../Post";
+import React from 'react';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import vilijamis from './vilijamis.png';
+import Post from '../Post';
 
 const postedImage = `${process.env.PUBLIC_URL}/pinned-post-image.png`;
 
@@ -39,17 +39,19 @@ const ListHeader = styled.div`
 `;
 
 const previewToVilijamis = {
-  title: "The Future of Web Fonts",
+  title: 'The Future of Web Fonts',
   description:
-    "We love typefaces. They give our sites and applications personalized feel. They convey the information and tell a story. They establish information hierarchy. But they’re…",
-  link: "vilijamis.com",
-  image: vilijamis
+    'We love typefaces. They give our sites and applications personalized feel. They convey the information and tell a story. They establish information hierarchy. But they’re…',
+  link: 'vilijamis.com',
+  image: vilijamis,
 };
 
-const TweetList = props => (
+const TweetList = () => (
   <Wrap>
     <ListHeader>
-      <ListLink to="/">Tweets</ListLink>
+      <ListLink to="/">
+Tweets
+      </ListLink>
       <ListLink to="/replies" activeClassName="tweet-list">
         Tweets & replies
       </ListLink>
@@ -69,12 +71,27 @@ const TweetList = props => (
       liked
       image={postedImage}
     >
-      We’ve made some more resources for all<br />you wonderful{" "}
-      <Link href="#">#design</Link> folk<br />
-      <Link href="#">everyinteraction.com/resources/</Link>{" "}
-      <Link href="#">#webdesign</Link>
+      We’ve made some more resources for all
       <br />
-      <Link href="#">#UI</Link>
+      you wonderful
+      {' '}
+      <Link href="#">
+#design
+      </Link>
+      {' '}
+folk
+      <br />
+      <Link href="#">
+everyinteraction.com/resources/
+      </Link>
+      {' '}
+      <Link href="#">
+#webdesign
+      </Link>
+      <br />
+      <Link href="#">
+#UI
+      </Link>
     </Post>
     <Post
       name="Every Interaction"
@@ -85,8 +102,13 @@ const TweetList = props => (
       likes={2}
       bigFont
     >
-      Our new website concept; Taking you<br />from… @ Every Interaction<br />
-      <Link href="#">instagram.com/p/BNFGrfhBP3M/</Link>
+      Our new website concept; Taking you
+      <br />
+      from… @ Every Interaction
+      <br />
+      <Link href="#">
+instagram.com/p/BNFGrfhBP3M/
+      </Link>
     </Post>
     <Post
       name="Every Interaction"
@@ -98,8 +120,9 @@ const TweetList = props => (
       bigFont={false}
       preview={previewToVilijamis}
     >
-      Variable web fonts are coming, and will open a world of opportunities<br />for
-      weight use online
+      Variable web fonts are coming, and will open a world of opportunities
+      <br />
+      for weight use online
     </Post>
   </Wrap>
 );

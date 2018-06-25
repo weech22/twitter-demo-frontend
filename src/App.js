@@ -1,14 +1,17 @@
-import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-import { Redirect } from "react-router";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { Redirect } from 'react-router';
+import { Helmet } from 'react-helmet';
+import ProfilePage from './ProfilePage';
 
-import ProfilePage from "./ProfilePage";
+const title = 'Twitter';
 
-const App = props => (
+const App = () => (
   <div>
     <Helmet>
-      <title>Twitter</title>
+      <title>
+        {title}
+      </title>
     </Helmet>
     <BrowserRouter>
       <div>

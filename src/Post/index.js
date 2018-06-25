@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import Preview from "./Preview";
-import pinnedIcon from "./pinned-icon.svg";
-import commentsIcon from "./comments-icon.svg";
-import retweetsIcon from "./retweets-icon.svg";
-import likesIcon from "./likes-icon.svg";
-import lovesIcon from "./loves-icon.svg";
-import envelopeIcon from "./envelope-icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import Preview from './Preview';
+import pinnedIcon from './pinned-icon.svg';
+import commentsIcon from './comments-icon.svg';
+import retweetsIcon from './retweets-icon.svg';
+import likesIcon from './likes-icon.svg';
+import lovesIcon from './loves-icon.svg';
+import envelopeIcon from './envelope-icon.svg';
 
 const avatar = `${process.env.PUBLIC_URL}/avatar.png`;
 
@@ -30,7 +30,12 @@ const PostBlock = styled.div`
 const AvatarBlock = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: ${props => (props.pinned ? "3px" : "11px")};
+
+  margin-top: ${(props) => {
+    const { pinned } = props;
+    return pinned ? '3px' : '11px';
+  }};
+
   justify-content: flex-start;
   align-items: flex-end;
 `;
@@ -88,9 +93,16 @@ const Action = styled.div`
 
 const ActionCount = styled.span`
   font-size: 13px;
-  letter-spacing: -0.2px;
-  color: ${props => (props.liked ? "#E2264D" : "#667580")};
-  font-weight: ${props => (props.liked ? "bold" : "normal")};
+
+  font-weight: ${(props) => {
+    const { liked } = props;
+    return liked ? 'bold' : 'normal';
+  }};
+
+  color: ${(props) => {
+    const { liked } = props;
+    return liked ? '#E2264D' : '#667580';
+  }};
 `;
 
 const ActionBlock = styled.div`
@@ -116,57 +128,92 @@ const PostedImage = styled.img`
   width: 495px;
 `;
 
-const Post = props => (
-  <Wrap>
-    <AvatarBlock pinned={props.pinned}>
-      {props.pinned && <Pin src={pinnedIcon} />}
-      <AvatarImage src={avatar} />
-    </AvatarBlock>
-    <PostBlock>
-      <div>
-        {props.pinned && <Pinned>Pinned Tweet</Pinned>}
-        <Name>{props.name} </Name>
-        <ProfileName>
-          @{props.profileName} • {props.time}
-        </ProfileName>
-      </div>
-      {props.bigFont && <BigText>{props.children}</BigText>}
-      {!props.bigFont && <Text>{props.children}</Text>}
-      {props.preview && (
-        <Preview
-          image={props.preview.image}
-          link={props.preview.link}
-          title={props.preview.title}
-        >
-          {props.preview.description}
-        </Preview>
-      )}
-      {props.image && (
-        <ImageBlock>
-          <PostedImage src={props.image} />
-        </ImageBlock>
-      )}
-      <ActionBlock>
-        <Action>
-          <Icon src={commentsIcon} />
-          <ActionCount>{props.comments > 0 && props.comments}</ActionCount>
-        </Action>
-        <Action>
-          <Icon src={retweetsIcon} />
-          <ActionCount>{props.retweets > 0 && props.retweets}</ActionCount>
-        </Action>
-        <Action>
-          {props.liked ? <Icon src={lovesIcon} /> : <Icon src={likesIcon} />}
-          <ActionCount liked={props.liked}>
-            {props.likes > 0 && props.likes}
-          </ActionCount>
-        </Action>
-        <Action>
-          <Icon src={envelopeIcon} />
-        </Action>
-      </ActionBlock>
-    </PostBlock>
-  </Wrap>
-);
+const Post = (props) => {
+  const {
+    pinned,
+    name,
+    profileName,
+    time,
+    bigFont,
+    children,
+    preview,
+    image,
+    comments,
+    retweets,
+    liked,
+    likes,
+  } = props;
+  return (
+    <Wrap>
+      <AvatarBlock pinned={pinned}>
+        {pinned && <Pin src={pinnedIcon} />}
+        <AvatarImage src={avatar} />
+      </AvatarBlock>
+      <PostBlock>
+        <div>
+          {pinned && (
+          <Pinned>
+Pinned Tweet
+          </Pinned>
+          )}
+          <Name>
+            {name}
+            {' '}
+          </Name>
+          <ProfileName>
+            @
+            {profileName}
+            {' '}
+•
+            {time}
+          </ProfileName>
+        </div>
+        {bigFont && (
+        <BigText>
+          {children}
+        </BigText>
+        )}
+        {!bigFont && (
+        <Text>
+          {children}
+        </Text>
+        )}
+        {preview && (
+          <Preview image={preview.image} link={preview.link} title={preview.title}>
+            {preview.description}
+          </Preview>
+        )}
+        {image && (
+          <ImageBlock>
+            <PostedImage src={image} />
+          </ImageBlock>
+        )}
+        <ActionBlock>
+          <Action>
+            <Icon src={commentsIcon} />
+            <ActionCount>
+              {comments > 0 && comments}
+            </ActionCount>
+          </Action>
+          <Action>
+            <Icon src={retweetsIcon} />
+            <ActionCount>
+              {retweets > 0 && retweets}
+            </ActionCount>
+          </Action>
+          <Action>
+            {liked ? <Icon src={lovesIcon} /> : <Icon src={likesIcon} />}
+            <ActionCount liked={liked}>
+              {likes > 0 && likes}
+            </ActionCount>
+          </Action>
+          <Action>
+            <Icon src={envelopeIcon} />
+          </Action>
+        </ActionBlock>
+      </PostBlock>
+    </Wrap>
+  );
+};
 
 export default Post;

@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Wrap = styled.div`
   cursor: pointer;
@@ -27,11 +27,19 @@ const SubTitle = styled.span`
   margin-top: 4px;
 `;
 
-const TrendLine = props => (
-  <Wrap>
-    <Trend href="#">{props.children}</Trend>
-    <SubTitle>{props.subTitle}</SubTitle>
-  </Wrap>
-);
+const TrendLine = (props) => {
+  const { children, subTitle } = props;
+
+  return (
+    <Wrap>
+      <Trend href="#">
+        {children}
+      </Trend>
+      <SubTitle>
+        {subTitle}
+      </SubTitle>
+    </Wrap>
+  );
+};
 
 export default TrendLine;

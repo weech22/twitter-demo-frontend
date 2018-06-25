@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Wrap = styled.div`
   border: 1px solid #e1e8ed;
@@ -38,15 +38,27 @@ const TextBlock = styled.div`
   padding: 11px 0 8px 9px;
 `;
 
-const Preview = props => (
-  <Wrap>
-    <Image src={props.image} />
-    <TextBlock>
-      <Title>{props.title}</Title>
-      <Description>{props.children}</Description>
-      <Link href="#">{props.link}</Link>
-    </TextBlock>
-  </Wrap>
-);
+const Preview = (props) => {
+  const {
+    image, title, children, link,
+  } = props;
+
+  return (
+    <Wrap>
+      <Image src={image} />
+      <TextBlock>
+        <Title>
+          {title}
+        </Title>
+        <Description>
+          {children}
+        </Description>
+        <Link href="#">
+          {link}
+        </Link>
+      </TextBlock>
+    </Wrap>
+  );
+};
 
 export default Preview;

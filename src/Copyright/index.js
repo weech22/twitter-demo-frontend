@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Wrap = styled.div`
   display: flex;
@@ -32,13 +32,27 @@ const Name = styled.span`
 
 const Copyright = () => (
   <Wrap>
-    <Name>© 2018 Twitter</Name>
-    <Link href="#">About</Link>
-    <Link href="#">Help Center</Link>
-    <Link href="#">Terms</Link>
-    <Link href="#">Privacy policy</Link>
-    <Link href="#">Cookies</Link>
-    <Link href="#">Ads info</Link>
+    <Name>
+© 2018 Twitter
+    </Name>
+    <Link href="#">
+About
+    </Link>
+    <Link href="#">
+Help Center
+    </Link>
+    <Link href="#">
+Terms
+    </Link>
+    <Link href="#">
+Privacy policy
+    </Link>
+    <Link href="#">
+Cookies
+    </Link>
+    <Link href="#">
+Ads info
+    </Link>
   </Wrap>
 );
 

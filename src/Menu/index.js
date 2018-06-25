@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-import more from "./more-icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import more from './more-icon.svg';
 
 const Wrap = styled.div`
   background: white;
@@ -79,36 +79,58 @@ const MoreButton = styled.button`
   cursor: pointer;
 `;
 
-const Menu = props => (
+const Menu = () => (
   <Wrap>
     <div className="container">
       <div className="row">
         <div className="col-lg-4 col-lg-offset-3">
           <MenuBlock>
             <MenuTab to="/everyinteract">
-              <LinkCaption>Tweets</LinkCaption>
-              <MenuNumber>8,058</MenuNumber>
+              <LinkCaption>
+Tweets
+              </LinkCaption>
+              <MenuNumber>
+8,058
+              </MenuNumber>
             </MenuTab>
             <MenuTab exact to="/">
-              <LinkCaption>Following</LinkCaption>
-              <MenuNumber>721</MenuNumber>
+              <LinkCaption>
+Following
+              </LinkCaption>
+              <MenuNumber>
+721
+              </MenuNumber>
             </MenuTab>
             <MenuTab exact to="/">
-              <LinkCaption>Followers</LinkCaption>
-              <MenuNumber>1,815</MenuNumber>
+              <LinkCaption>
+Followers
+              </LinkCaption>
+              <MenuNumber>
+1,815
+              </MenuNumber>
             </MenuTab>
             <MenuTab exact to="/">
-              <LinkCaption>Likes</LinkCaption>
-              <MenuNumber>460</MenuNumber>
+              <LinkCaption>
+Likes
+              </LinkCaption>
+              <MenuNumber>
+460
+              </MenuNumber>
             </MenuTab>
             <MenuTab exact to="/">
-              <LinkCaption>Lists</LinkCaption>
-              <MenuNumber>2</MenuNumber>
+              <LinkCaption>
+Lists
+              </LinkCaption>
+              <MenuNumber>
+2
+              </MenuNumber>
             </MenuTab>
           </MenuBlock>
         </div>
         <div className="col-lg-5 end-lg">
-          <FollowButton>Follow</FollowButton>
+          <FollowButton>
+Follow
+          </FollowButton>
           <MoreButton />
         </div>
       </div>

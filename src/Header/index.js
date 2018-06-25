@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import homeIcon from "./home-icon.svg";
-import moments from "./moments-icon.svg";
-import notifications from "./notifications-icon.svg";
-import messages from "./messages-icon.svg";
-import logo from "./twitter-logo.svg";
-import search from "./search-icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import homeIcon from './home-icon.svg';
+import moments from './moments-icon.svg';
+import notifications from './notifications-icon.svg';
+import messages from './messages-icon.svg';
+import logo from './twitter-logo.svg';
+import search from './search-icon.svg';
 
 const avatar = `${process.env.PUBLIC_URL}/avatar.png`;
 
@@ -110,7 +110,7 @@ const SearchBlock = styled.div`
   justify-content: flex-end;
 `;
 
-const Header = props => (
+const Header = () => (
   <Wrap>
     <div className="container">
       <div className="row">
@@ -118,19 +118,27 @@ const Header = props => (
           <Navigation>
             <LinkBlock>
               <Icon src={homeIcon} alt="" />
-              <Link>Home</Link>
+              <Link href="#">
+Home
+              </Link>
             </LinkBlock>
             <LinkBlock>
               <Icon src={moments} alt="" />
-              <Link>Moments</Link>
+              <Link href="#">
+Moments
+              </Link>
             </LinkBlock>
             <LinkBlock>
               <Icon src={notifications} alt="" />
-              <Link>Notifications</Link>
+              <Link href="#">
+Notifications
+              </Link>
             </LinkBlock>
             <LinkBlock>
               <Icon src={messages} alt="" />
-              <Link>Messages</Link>
+              <Link href="#">
+Messages
+              </Link>
             </LinkBlock>
           </Navigation>
         </div>
@@ -144,7 +152,9 @@ const Header = props => (
               <SearchButton type="button" />
             </SearchForm>
             <Avatar src={avatar} />
-            <TweetButton>Tweet</TweetButton>
+            <TweetButton>
+Tweet
+            </TweetButton>
           </SearchBlock>
         </div>
       </div>

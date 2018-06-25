@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import ProfileCard from "./ProfileCard";
-import peopleIcon from "./people-icon.svg";
-import aiAvatar from "./ai.png";
-import creodeAvatar from "./creode.png";
-import eAvatar from "./epiphany.png";
+import React from 'react';
+import styled from 'styled-components';
+import ProfileCard from './ProfileCard';
+import peopleIcon from './people-icon.svg';
+import aiAvatar from './ai.png';
+import creodeAvatar from './creode.png';
+import eAvatar from './epiphany.png';
 
 const Wrap = styled.div`
   background: white;
@@ -39,34 +39,35 @@ const PeopleSearch = styled.div`
   margin-top: 23px;
 `;
 
-const Separator = () => <Dot> • </Dot>;
+const Separator = () => (
+  <Dot>
+    {' '}
+•
+    {' '}
+  </Dot>
+);
 
 const FollowSuggestions = () => (
   <Wrap>
-    <Title>Who to follow</Title>
+    <Title>
+Who to follow
+    </Title>
     <Separator />
-    <Action href="#">Refresh</Action>
+    <Action href="#">
+Refresh
+    </Action>
     <Separator />
-    <Action href="#">View all</Action>
-    <ProfileCard
-      avatar={aiAvatar}
-      name="AppleInsider"
-      profileName="appleinsider"
-    />
-    <ProfileCard
-      avatar={creodeAvatar}
-      name="Creode"
-      profileName="Creode"
-      verified
-    />
-    <ProfileCard
-      avatar={eAvatar}
-      name="Epiphany Search"
-      profileName="Epiph..."
-    />
+    <Action href="#">
+View all
+    </Action>
+    <ProfileCard avatar={aiAvatar} name="AppleInsider" profileName="appleinsider" />
+    <ProfileCard avatar={creodeAvatar} name="Creode" profileName="Creode" verified />
+    <ProfileCard avatar={eAvatar} name="Epiphany Search" profileName="Epiph..." />
     <PeopleSearch>
       <Icon src={peopleIcon} />
-      <Action href="#">Find people you know</Action>
+      <Action href="#">
+Find people you know
+      </Action>
     </PeopleSearch>
   </Wrap>
 );

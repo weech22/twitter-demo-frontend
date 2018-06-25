@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import InfoLine from "./InfoLine";
-import tick from "./tick-icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import InfoLine from './InfoLine';
+import tick from './tick-icon.svg';
 
 const Wrap = styled.div`
   margin-top: 41px;
@@ -74,17 +74,26 @@ const Title = styled.div`
   display: flex;
 `;
 
-const ProfileInfo = props => (
+const ProfileInfo = () => (
   <Wrap>
     <Title>
-      <Name>Every Interaction</Name>
+      <Name>
+Every Interaction
+      </Name>
       <TitleIcon src={tick} />
     </Title>
-    <ProfileName>@EveryInteract</ProfileName>
-    <FollowerProfile>Follows you</FollowerProfile>
+    <ProfileName>
+@EveryInteract
+    </ProfileName>
+    <FollowerProfile>
+Follows you
+    </FollowerProfile>
     <Description>
-      UX Design studio focused problem<br />solving creativity. Design to us is
-      how<br />can we make things *work* amazing.
+      UX Design studio focused problem
+      <br />
+      solving creativity. Design to us is how
+      <br />
+      can we make things *work* amazing.
     </Description>
     <div>
       <InfoLine location="London, UK" />
@@ -92,8 +101,12 @@ const ProfileInfo = props => (
       <InfoLine joined="May 2008" />
     </div>
     <ButtonBlock>
-      <ContactButton>Tweet to</ContactButton>
-      <ContactButton>Message</ContactButton>
+      <ContactButton>
+Tweet to
+      </ContactButton>
+      <ContactButton>
+Message
+      </ContactButton>
     </ButtonBlock>
   </Wrap>
 );

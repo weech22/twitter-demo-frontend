@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import followersIcon from "./followers-icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import followersIcon from './followers-icon.svg';
+
 const avatar1 = `${process.env.PUBLIC_URL}/avatars/1.jpg`;
 const avatar2 = `${process.env.PUBLIC_URL}/avatars/2.jpg`;
 const avatar3 = `${process.env.PUBLIC_URL}/avatars/3.jpg`;
@@ -54,7 +55,9 @@ const FamiliarFollowers = () => (
   <Wrap>
     <TitleBlock>
       <Icon src={followersIcon} />
-      <Link href="#">6 Followers you know</Link>
+      <Link href="#">
+6 Followers you know
+      </Link>
     </TitleBlock>
     <AvatarSection>
       <AvatarLink href="#">

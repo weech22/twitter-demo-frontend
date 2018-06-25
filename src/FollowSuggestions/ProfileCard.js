@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import tickIcon from "./tick-icon.svg";
-import crossIcon from "./cross-icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import tickIcon from './tick-icon.svg';
+import crossIcon from './cross-icon.svg';
 
 const Wrap = styled.div`
   position: relative;
@@ -89,21 +89,34 @@ const Name = styled.span`
   }
 `;
 
-const ProfileCard = props => (
-  <Wrap>
-    <AvatarSection>
-      <Avatar src={props.avatar} />
-    </AvatarSection>
-    <MainSection>
-      <NameSection>
-        <Name>{props.name}</Name>
-        {props.verified && <Tick src={tickIcon} />}
-        <ProfileName>@{props.profileName}</ProfileName>
-      </NameSection>
-      <Button>Follow</Button>
-    </MainSection>
-    <CloseButton />
-  </Wrap>
-);
+const ProfileCard = (props) => {
+  const {
+    avatar, name, verified, profileName,
+  } = props;
+
+  return (
+    <Wrap>
+      <AvatarSection>
+        <Avatar src={avatar} />
+      </AvatarSection>
+      <MainSection>
+        <NameSection>
+          <Name>
+            {name}
+          </Name>
+          {verified && <Tick src={tickIcon} />}
+          <ProfileName>
+            @
+            {profileName}
+          </ProfileName>
+        </NameSection>
+        <Button>
+Follow
+        </Button>
+      </MainSection>
+      <CloseButton />
+    </Wrap>
+  );
+};
 
 export default ProfileCard;
