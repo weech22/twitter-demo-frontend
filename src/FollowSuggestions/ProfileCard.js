@@ -106,12 +106,11 @@ const ProfileCard = (props) => {
           </Name>
           {verified && <Tick src={tickIcon} />}
           <ProfileName>
-            @
-            {profileName}
+            {`@${profileName}`}
           </ProfileName>
         </NameSection>
         <Button>
-Follow
+          {'Follow'}
         </Button>
       </MainSection>
       <CloseButton />

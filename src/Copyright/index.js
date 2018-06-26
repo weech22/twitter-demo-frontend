@@ -33,25 +33,25 @@ const Name = styled.span`
 const Copyright = () => (
   <Wrap>
     <Name>
-© 2018 Twitter
+      {'© 2018 Twitter'}
     </Name>
     <Link href="#">
-About
+      {'About'}
     </Link>
     <Link href="#">
-Help Center
+      {'Help Center'}
     </Link>
     <Link href="#">
 Terms
     </Link>
     <Link href="#">
-Privacy policy
+      {'Privacy policy'}
     </Link>
     <Link href="#">
-Cookies
+      {'Cookies'}
     </Link>
     <Link href="#">
-Ads info
+      {'Ads info'}
     </Link>
   </Wrap>
 );

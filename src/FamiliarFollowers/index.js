@@ -61,14 +61,12 @@ const AvatarLink = styled(NavLink)`
   margin-right: 5px;
 `;
 
-const title = '6 Followers you know';
-
 const FamiliarFollowers = () => (
   <Wrap>
     <TitleBlock>
       <Icon src={followersIcon} />
       <Link href="#">
-        {title}
+        {'6 Followers you know'}
       </Link>
     </TitleBlock>
     <AvatarSection>

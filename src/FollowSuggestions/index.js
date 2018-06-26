@@ -62,24 +62,22 @@ const PeopleSearch = styled.div`
 
 const Separator = () => (
   <Dot>
-    {' '}
-•
-    {' '}
+    {' • '}
   </Dot>
 );
 
 const FollowSuggestions = () => (
   <Wrap>
     <Title>
-Who to follow
+      {'Who to follow'}
     </Title>
     <Separator />
     <Action href="#">
-Refresh
+      {'Refresh'}
     </Action>
     <Separator />
     <Action href="#">
-View all
+      {'View all'}
     </Action>
     {profiles.map(profile => (
       <ProfileCard avatar={profile.avatar} name={profile.name} profileName={profile.profileName} />
@@ -87,7 +85,7 @@ View all
     <PeopleSearch>
       <Icon src={peopleIcon} />
       <Action href="#">
-Find people you know
+        {'Find people you know'}
       </Action>
     </PeopleSearch>
   </Wrap>
