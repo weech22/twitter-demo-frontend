@@ -39,7 +39,7 @@ const ProfileInfoLine = (props) => {
       {joined && <Icon src={joinedIcon} />}
       <Text>
         {location || (site && (
-        <Link>
+        <Link href="#">
           {site}
         </Link>
         )) || (joined && `Joined ${joined}`)}

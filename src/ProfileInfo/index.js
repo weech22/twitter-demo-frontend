@@ -78,22 +78,22 @@ const ProfileInfo = () => (
   <Wrap>
     <Title>
       <Name>
-Every Interaction
+        {'Every Interaction'}
       </Name>
       <TitleIcon src={tick} />
     </Title>
     <ProfileName>
-@EveryInteract
+      {'@EveryInteract'}
     </ProfileName>
     <FollowerProfile>
-Follows you
+      {'Follows you'}
     </FollowerProfile>
     <Description>
-      UX Design studio focused problem
+      {'UX Design studio focused problem'}
       <br />
-      solving creativity. Design to us is how
+      {'solving creativity. Design to us is how'}
       <br />
-      can we make things *work* amazing.
+      {'can we make things *work* amazing.'}
     </Description>
     <div>
       <InfoLine location="London, UK" />
@@ -102,10 +102,10 @@ Follows you
     </div>
     <ButtonBlock>
       <ContactButton>
-Tweet to
+        {'Tweet to'}
       </ContactButton>
       <ContactButton>
-Message
+        {'Message'}
       </ContactButton>
     </ButtonBlock>
   </Wrap>
