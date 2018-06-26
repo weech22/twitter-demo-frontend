@@ -6,6 +6,27 @@ import aiAvatar from './ai.png';
 import creodeAvatar from './creode.png';
 import eAvatar from './epiphany.png';
 
+const profiles = [
+  {
+    avatar: aiAvatar,
+    name: 'AppleInsider',
+    profileName: 'appleinsider',
+    isVerified: false,
+  },
+  {
+    avatar: creodeAvatar,
+    name: 'Creode',
+    profileName: 'Creode',
+    isVerified: true,
+  },
+  {
+    avatar: eAvatar,
+    name: 'Epiphany Search',
+    profileName: 'Epiph...',
+    isVerified: false,
+  },
+];
+
 const Wrap = styled.div`
   background: white;
   margin-top: 9px;
@@ -60,9 +81,9 @@ Refresh
     <Action href="#">
 View all
     </Action>
-    <ProfileCard avatar={aiAvatar} name="AppleInsider" profileName="appleinsider" />
-    <ProfileCard avatar={creodeAvatar} name="Creode" profileName="Creode" verified />
-    <ProfileCard avatar={eAvatar} name="Epiphany Search" profileName="Epiph..." />
+    {profiles.map(profile => (
+      <ProfileCard avatar={profile.avatar} name={profile.name} profileName={profile.profileName} />
+    ))}
     <PeopleSearch>
       <Icon src={peopleIcon} />
       <Action href="#">

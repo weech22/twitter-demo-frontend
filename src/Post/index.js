@@ -32,8 +32,8 @@ const AvatarBlock = styled.div`
   flex-direction: column;
 
   margin-top: ${(props) => {
-    const { pinned } = props;
-    return pinned ? '3px' : '11px';
+    const { isPinned } = props;
+    return isPinned ? '3px' : '11px';
   }};
 
   justify-content: flex-start;
@@ -64,18 +64,24 @@ const Text = styled.p`
   line-height: 22px;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: -0.2px;
   color: #292f33;
   margin-top: 0;
+  > a {
+    text-decoration: none;
+    color: #72c4f6;
+  }
 `;
 
 const BigText = styled.p`
   line-height: 30px;
   font-size: 25px;
   font-weight: 200;
-
   color: #292f33;
   margin: 0 0 13px 0;
+  > a {
+    text-decoration: none;
+    color: #72c4f6;
+  }
 `;
 
 const Icon = styled.img`
@@ -95,13 +101,13 @@ const ActionCount = styled.span`
   font-size: 13px;
 
   font-weight: ${(props) => {
-    const { liked } = props;
-    return liked ? 'bold' : 'normal';
+    const { isLiked } = props;
+    return isLiked ? 'bold' : 'normal';
   }};
 
   color: ${(props) => {
-    const { liked } = props;
-    return liked ? '#E2264D' : '#667580';
+    const { isLiked } = props;
+    return isLiked ? '#E2264D' : '#667580';
   }};
 `;
 
@@ -113,7 +119,6 @@ const ActionBlock = styled.div`
 
 const Pinned = styled.span`
   font-size: 12px;
-  letter-spacing: -0.2px;
   color: #707e88;
   margin-bottom: 4px;
   display: block;
@@ -130,54 +135,41 @@ const PostedImage = styled.img`
 
 const Post = (props) => {
   const {
-    pinned,
+    isPinned,
     name,
     profileName,
     time,
-    bigFont,
-    children,
+    isBigFont,
     preview,
     image,
     comments,
     retweets,
-    liked,
+    isLiked,
     likes,
+    text,
   } = props;
   return (
     <Wrap>
-      <AvatarBlock pinned={pinned}>
-        {pinned && <Pin src={pinnedIcon} />}
+      <AvatarBlock isPinned={isPinned}>
+        {isPinned && <Pin src={pinnedIcon} />}
         <AvatarImage src={avatar} />
       </AvatarBlock>
       <PostBlock>
         <div>
-          {pinned && (
+          {isPinned && (
           <Pinned>
-Pinned Tweet
+            {'Pinned Tweet'}
           </Pinned>
           )}
           <Name>
-            {name}
-            {' '}
+            {`${name} `}
           </Name>
           <ProfileName>
-            @
-            {profileName}
-            {' '}
-•
-            {time}
+            {`@${profileName}  •  ${time}`}
           </ProfileName>
         </div>
-        {bigFont && (
-        <BigText>
-          {children}
-        </BigText>
-        )}
-        {!bigFont && (
-        <Text>
-          {children}
-        </Text>
-        )}
+        {isBigFont && <BigText dangerouslySetInnerHTML={{ __html: text }} />}
+        {!isBigFont && <Text dangerouslySetInnerHTML={{ __html: text }} />}
         {preview && (
           <Preview image={preview.image} link={preview.link} title={preview.title}>
             {preview.description}
@@ -202,8 +194,8 @@ Pinned Tweet
             </ActionCount>
           </Action>
           <Action>
-            {liked ? <Icon src={lovesIcon} /> : <Icon src={likesIcon} />}
-            <ActionCount liked={liked}>
+            {isLiked ? <Icon src={lovesIcon} /> : <Icon src={likesIcon} />}
+            <ActionCount isLiked={isLiked}>
               {likes > 0 && likes}
             </ActionCount>
           </Action>

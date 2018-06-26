@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import mediaIcon from './media-icon.svg';
 
 const photo1 = `${process.env.PUBLIC_URL}/photos/1.jpg`;
@@ -8,6 +9,15 @@ const photo3 = `${process.env.PUBLIC_URL}/photos/3.jpg`;
 const photo4 = `${process.env.PUBLIC_URL}/photos/4.jpg`;
 const photo5 = `${process.env.PUBLIC_URL}/photos/5.jpg`;
 const photo6 = `${process.env.PUBLIC_URL}/photos/6.jpg`;
+
+const photos = [
+  { image: photo1, to: 'photo1' },
+  { image: photo2, to: 'photo2' },
+  { image: photo3, to: 'photo3' },
+  { image: photo4, to: 'photo4' },
+  { image: photo5, to: 'photo5' },
+  { image: photo6, to: 'photo6' },
+];
 
 const Wrap = styled.div`
   margin-top: 31px;
@@ -40,7 +50,7 @@ const ImageSection = styled.div`
   justify-content: space-between;
 `;
 
-const ImageLink = styled.a`
+const ImageLink = styled(NavLink)`
   display: inline-block;
   margin-bottom: 5px;
   margin-right: 5px;
@@ -59,24 +69,11 @@ const Media = () => (
       </Link>
     </TitleBlock>
     <ImageSection>
-      <ImageLink href="#">
-        <Image src={photo1} />
-      </ImageLink>
-      <ImageLink href="#">
-        <Image src={photo2} />
-      </ImageLink>
-      <ImageLink href="#">
-        <Image src={photo3} />
-      </ImageLink>
-      <ImageLink href="#">
-        <Image src={photo4} />
-      </ImageLink>
-      <ImageLink href="#">
-        <Image src={photo5} />
-      </ImageLink>
-      <ImageLink href="#">
-        <Image src={photo6} />
-      </ImageLink>
+      {photos.map(photo => (
+        <ImageLink to={`/${photo.to}`}>
+          <Image src={photo.image} />
+        </ImageLink>
+      ))}
     </ImageSection>
   </Wrap>
 );

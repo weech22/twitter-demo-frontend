@@ -16,7 +16,6 @@ const Image = styled.img`
 const Title = styled.h2`
   line-height: 22px;
   font-size: 15px;
-  letter-spacing: -0.2px;
   color: #000000;
   margin: 0;
 `;
@@ -29,7 +28,6 @@ const Description = styled.span`
 const Link = styled.a`
   text-decoration: none;
   font-size: 15px;
-  letter-spacing: -0.5px;
   color: #97a6b1;
   font-weight: 200;
 `;
