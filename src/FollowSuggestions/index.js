@@ -80,7 +80,12 @@ const FollowSuggestions = () => (
       {'View all'}
     </Action>
     {profiles.map(profile => (
-      <ProfileCard avatar={profile.avatar} name={profile.name} profileName={profile.profileName} />
+      <ProfileCard
+        avatar={profile.avatar}
+        name={profile.name}
+        profileName={profile.profileName}
+        isVerified={profile.isVerified}
+      />
     ))}
     <PeopleSearch>
       <Icon src={peopleIcon} />

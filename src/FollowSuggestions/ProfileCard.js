@@ -91,7 +91,7 @@ const Name = styled.span`
 
 const ProfileCard = (props) => {
   const {
-    avatar, name, verified, profileName,
+    avatar, name, isVerified, profileName,
   } = props;
 
   return (
@@ -104,7 +104,7 @@ const ProfileCard = (props) => {
           <Name>
             {name}
           </Name>
-          {verified && <Tick src={tickIcon} />}
+          {isVerified && <Tick src={tickIcon} />}
           <ProfileName>
             {`@${profileName}`}
           </ProfileName>

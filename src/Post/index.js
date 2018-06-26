@@ -30,12 +30,7 @@ const PostBlock = styled.div`
 const AvatarBlock = styled.div`
   display: flex;
   flex-direction: column;
-
-  margin-top: ${(props) => {
-    const { isPinned } = props;
-    return isPinned ? '3px' : '11px';
-  }};
-
+  margin-top: ${({ isPinned }) => (isPinned ? '3px' : '11px')};
   justify-content: flex-start;
   align-items: flex-end;
 `;
@@ -44,7 +39,6 @@ const Name = styled.span`
   line-height: 19px;
   font-weight: 500;
   font-size: 15px;
-  letter-spacing: -0.2px;
   color: #292f33;
 `;
 
@@ -99,16 +93,8 @@ const Action = styled.div`
 
 const ActionCount = styled.span`
   font-size: 13px;
-
-  font-weight: ${(props) => {
-    const { isLiked } = props;
-    return isLiked ? 'bold' : 'normal';
-  }};
-
-  color: ${(props) => {
-    const { isLiked } = props;
-    return isLiked ? '#E2264D' : '#667580';
-  }};
+  font-weight: ${({ isLiked }) => (isLiked ? 'bold' : 'normal')};
+  color: ${({ isLiked }) => (isLiked ? '#E2264D' : '#667580')};
 `;
 
 const ActionBlock = styled.div`
