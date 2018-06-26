@@ -65,7 +65,7 @@ const Media = () => (
     <TitleBlock>
       <Icon src={mediaIcon} />
       <Link href="#">
-522 Photos and videos
+        {'522 Photos and videos'}
       </Link>
     </TitleBlock>
     <ImageSection>

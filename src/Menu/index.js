@@ -56,7 +56,7 @@ const Menu = () => (
         </div>
         <div className="col-lg-5 end-lg">
           <FollowButton>
-Follow
+            {'Follow'}
           </FollowButton>
           <MoreButton />
         </div>
