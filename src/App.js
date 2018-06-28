@@ -17,13 +17,18 @@ const App = () => (
       <div>
         <Header />
         <Redirect from="/" to="/everyinteract" />
-        <Route path="/everyinteract" component={ProfilePage} />
-        <Route path="/about" component={Miscellaneous} />
-        <Route path="/help" component={Miscellaneous} />
-        <Route path="/terms" component={Miscellaneous} />
-        <Route path="/privacy" component={Miscellaneous} />
-        <Route path="/cookies" component={Miscellaneous} />
-        <Route path="/ads" component={Miscellaneous} />
+        <Route exact path="/everyinteract" component={ProfilePage} />
+        <Route path="/hashtag/" component={Miscellaneous} />
+        <Route path="/search/" component={Miscellaneous} />
+        <Route exact path="/moments" component={Miscellaneous} />
+        <Route exact path="/notifications" component={Miscellaneous} />
+        <Route exact path="/messages" component={Miscellaneous} />
+        <Route exact path="/about" component={Miscellaneous} />
+        <Route exact path="/help" component={Miscellaneous} />
+        <Route exact path="/terms" component={Miscellaneous} />
+        <Route exact path="/privacy" component={Miscellaneous} />
+        <Route exact path="/cookies" component={Miscellaneous} />
+        <Route exact path="/ads" component={Miscellaneous} />
       </div>
     </BrowserRouter>
   </div>

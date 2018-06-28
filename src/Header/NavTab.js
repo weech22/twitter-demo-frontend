@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-const Wrap = styled.div`
+const Wrap = styled(NavLink)`
+  text-decoration: none;
   cursor: pointer;
   display: flex;
   flex-grow: 1;
@@ -14,8 +15,7 @@ const Wrap = styled.div`
   }
 `;
 
-const Link = styled(NavLink)`
-  text-decoration: none;
+const Caption = styled.span`
   cursor: pointer;
   font-weight: 500;
   font-size: 13px;
@@ -33,11 +33,11 @@ const Icon = styled.img`
 const Tab = (props) => {
   const { caption, src, to } = props;
   return (
-    <Wrap>
+    <Wrap to={to}>
       <Icon src={src} alt="" />
-      <Link to={to}>
+      <Caption>
         {caption}
-      </Link>
+      </Caption>
     </Wrap>
   );
 };
