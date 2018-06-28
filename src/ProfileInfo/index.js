@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import InfoLine from './InfoLine';
 import tick from './tick-icon.svg';
+import locationIcon from './location-icon.svg';
+import linkIcon from './link-icon.svg';
+import joinedIcon from './joined-icon.svg';
 
 const Wrap = styled.div`
   margin-top: 41px;
@@ -98,9 +101,9 @@ const ProfileInfo = () => (
       {'can we make things *work* amazing.'}
     </Description>
     <div>
-      <InfoLine location="London, UK" />
-      <InfoLine site="everyinteraction.com" />
-      <InfoLine joined="May 2008" />
+      <InfoLine caption="London, UK" icon={locationIcon} />
+      <InfoLine caption="everyinteraction.com" icon={linkIcon} isLink />
+      <InfoLine caption="Joined May 2008" icon={joinedIcon} />
     </div>
     <ButtonBlock>
       <ContactButton>

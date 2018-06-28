@@ -1,8 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import locationIcon from './location-icon.svg';
-import linkIcon from './link-icon.svg';
-import joinedIcon from './joined-icon.svg';
 
 const Text = styled.span`
   line-height: 28px;
@@ -30,20 +27,20 @@ const Link = styled.a`
 `;
 
 const ProfileInfoLine = (props) => {
-  const { location, site, joined } = props;
+  const { caption, icon, isLink } = props;
 
   return (
     <Line>
-      {location && <Icon src={locationIcon} />}
-      {site && <Icon src={linkIcon} />}
-      {joined && <Icon src={joinedIcon} />}
-      <Text>
-        {location || (site && (
-        <Link href="#">
-          {site}
+      <Icon src={icon} />
+      {isLink ? (
+        <Link href={`https://${caption}`}>
+          {caption}
         </Link>
-        )) || (joined && `Joined ${joined}`)}
-      </Text>
+      ) : (
+        <Text>
+          {caption}
+        </Text>
+      )}
     </Line>
   );
 };
