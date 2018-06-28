@@ -63,6 +63,9 @@ const Text = styled.p`
   > a {
     text-decoration: none;
     color: #72c4f6;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -75,6 +78,9 @@ const BigText = styled.p`
   > a {
     text-decoration: none;
     color: #72c4f6;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 

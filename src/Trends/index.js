@@ -29,13 +29,17 @@ const Title = styled.span`
   color: #000000;
 `;
 
-const Action = styled.span`
+const Action = styled.button`
   text-decoration: none;
+  background: white;
+  border: none;
+  cursor: pointer;
   font-size: 12px;
   color: #1da1f2;
   &:hover {
     text-decoration: underline;
   }
+  padding: 0;
 `;
 
 const Dot = styled.span`

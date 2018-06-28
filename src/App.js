@@ -23,6 +23,8 @@ const App = () => (
         <Route exact path="/moments" component={Miscellaneous} />
         <Route exact path="/notifications" component={Miscellaneous} />
         <Route exact path="/messages" component={Miscellaneous} />
+        <Route exact path="/view_all" component={Miscellaneous} />
+        <Route exact path="/who_to_follow/import" component={Miscellaneous} />
         <Route exact path="/about" component={Miscellaneous} />
         <Route exact path="/help" component={Miscellaneous} />
         <Route exact path="/terms" component={Miscellaneous} />

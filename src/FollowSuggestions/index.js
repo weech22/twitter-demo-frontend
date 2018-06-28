@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import ProfileCard from './ProfileCard';
 import peopleIcon from './people-icon.svg';
 import aiAvatar from './ai.png';
@@ -39,13 +40,30 @@ const Title = styled.span`
   color: black;
 `;
 
-const Action = styled.span`
+const Action = styled.button`
   text-decoration: none;
+  background: white;
+  border: none;
+  cursor: pointer;
   font-size: 12px;
   color: #1da1f2;
   &:hover {
     text-decoration: underline;
   }
+  padding: 0;
+`;
+
+const Link = styled(NavLink)`
+  text-decoration: none;
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #1da1f2;
+  &:hover {
+    text-decoration: underline;
+  }
+  padding: 0;
 `;
 
 const Icon = styled.img`
@@ -76,9 +94,9 @@ const FollowSuggestions = () => (
       {'Refresh'}
     </Action>
     <Separator />
-    <Action>
+    <Link to="/view_all">
       {'View all'}
-    </Action>
+    </Link>
     {profiles.map(profile => (
       <ProfileCard
         avatar={profile.avatar}
@@ -89,9 +107,9 @@ const FollowSuggestions = () => (
     ))}
     <PeopleSearch>
       <Icon src={peopleIcon} />
-      <Action>
+      <Link to="/who_to_follow/import">
         {'Find people you know'}
-      </Action>
+      </Link>
     </PeopleSearch>
   </Wrap>
 );
