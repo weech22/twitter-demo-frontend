@@ -29,7 +29,7 @@ const Title = styled.span`
   color: #000000;
 `;
 
-const Action = styled.a`
+const Action = styled.span`
   text-decoration: none;
   font-size: 12px;
   color: #1da1f2;
@@ -58,7 +58,7 @@ const Trends = () => (
       {'United Kingdom Trends'}
     </Title>
     <Separator />
-    <Action href="#">
+    <Action>
       {'Change'}
     </Action>
     <TrendSection>

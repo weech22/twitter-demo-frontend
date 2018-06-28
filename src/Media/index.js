@@ -29,7 +29,7 @@ const TitleBlock = styled.div`
   margin-bottom: 8px;
 `;
 
-const Link = styled.a`
+const Link = styled(NavLink)`
   font-size: 14px;
   color: #1da1f2;
   text-decoration: none;
@@ -64,7 +64,7 @@ const Media = () => (
   <Wrap>
     <TitleBlock>
       <Icon src={mediaIcon} />
-      <Link href="#">
+      <Link to="media">
         {'522 Photos and videos'}
       </Link>
     </TitleBlock>

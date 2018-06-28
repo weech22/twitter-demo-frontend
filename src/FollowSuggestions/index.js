@@ -39,7 +39,7 @@ const Title = styled.span`
   color: black;
 `;
 
-const Action = styled.a`
+const Action = styled.span`
   text-decoration: none;
   font-size: 12px;
   color: #1da1f2;
@@ -72,11 +72,11 @@ const FollowSuggestions = () => (
       {'Who to follow'}
     </Title>
     <Separator />
-    <Action href="#">
+    <Action>
       {'Refresh'}
     </Action>
     <Separator />
-    <Action href="#">
+    <Action>
       {'View all'}
     </Action>
     {profiles.map(profile => (
@@ -89,7 +89,7 @@ const FollowSuggestions = () => (
     ))}
     <PeopleSearch>
       <Icon src={peopleIcon} />
-      <Action href="#">
+      <Action>
         {'Find people you know'}
       </Action>
     </PeopleSearch>

@@ -51,7 +51,7 @@ const Preview = (props) => {
         <Description>
           {children}
         </Description>
-        <Link href="#">
+        <Link href={`https://${link}`}>
           {link}
         </Link>
       </TextBlock>

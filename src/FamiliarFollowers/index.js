@@ -23,7 +23,7 @@ const Wrap = styled.div`
   margin-top: 18px;
 `;
 
-const Link = styled.a`
+const Link = styled(NavLink)`
   font-size: 14px;
   color: #1da1f2;
   text-decoration: none;
@@ -65,7 +65,7 @@ const FamiliarFollowers = () => (
   <Wrap>
     <TitleBlock>
       <Icon src={followersIcon} />
-      <Link href="#">
+      <Link to="/followers">
         {'6 Followers you know'}
       </Link>
     </TitleBlock>
