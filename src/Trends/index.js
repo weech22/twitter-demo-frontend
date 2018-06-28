@@ -20,12 +20,12 @@ const Wrap = styled.div`
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 15px;
-  padding-bottom: 47px;
+  padding-bottom: 10px;
 `;
 
 const Title = styled.span`
   font-weight: 600;
-  font-size: 18px;
+  font-size: 17px;
   color: #000000;
 `;
 
@@ -63,7 +63,7 @@ const Trends = () => (
     </Action>
     <TrendSection>
       {trends.map(trend => (
-        <TrendLine subTitle={trend.subTitle}>
+        <TrendLine subTitle={trend.subTitle} to="/about">
           {trend.title}
         </TrendLine>
       ))}

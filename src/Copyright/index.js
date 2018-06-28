@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const Wrap = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ const Wrap = styled.div`
   margin-top: 23px;
 `;
 
-const Link = styled.a`
+const Link = styled(NavLink)`
   display: inline-block;
   margin-right: 7px;
   text-decoration: none;
@@ -35,22 +36,22 @@ const Copyright = () => (
     <Name>
       {'© 2018 Twitter'}
     </Name>
-    <Link href="#">
+    <Link to="/about">
       {'About'}
     </Link>
-    <Link href="#">
+    <Link to="/help">
       {'Help Center'}
     </Link>
-    <Link href="#">
-Terms
+    <Link to="/terms">
+      {'Terms'}
     </Link>
-    <Link href="#">
+    <Link to="/privacy">
       {'Privacy policy'}
     </Link>
-    <Link href="#">
+    <Link to="/cookies">
       {'Cookies'}
     </Link>
-    <Link href="#">
+    <Link to="/ads">
       {'Ads info'}
     </Link>
   </Wrap>

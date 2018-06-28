@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import InfoLine from './InfoLine';
 import tick from './tick-icon.svg';
 
@@ -32,24 +33,25 @@ const Description = styled.p`
   margin-bottom: 11px;
 `;
 
-const Name = styled.span`
+const Name = styled(NavLink)`
   cursor: pointer;
   font-size: 22px;
   font-weight: 700;
   color: #14171a;
-  margin-bottom: 0;
+  text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
 `;
 
-const ProfileName = styled.span`
+const ProfileName = styled(NavLink)`
   cursor: pointer;
   line-height: 21px;
   font-size: 14px;
   font-weight: 400;
   color: #697787;
   margin-right: 8px;
+  text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
@@ -77,12 +79,12 @@ const Title = styled.div`
 const ProfileInfo = () => (
   <Wrap>
     <Title>
-      <Name>
+      <Name to="EveryInteract">
         {'Every Interaction'}
       </Name>
       <TitleIcon src={tick} />
     </Title>
-    <ProfileName>
+    <ProfileName to="EveryInteract">
       {'@EveryInteract'}
     </ProfileName>
     <FollowerProfile>

@@ -89,10 +89,10 @@ const Header = () => (
       <div className="row">
         <div className="col-lg-5">
           <Navigation>
-            <Tab src={homeIcon} caption="Home" />
-            <Tab src={momentsIcon} caption="Moments" />
-            <Tab src={notificationsIcon} caption="Notifications" />
-            <Tab src={messagesIcon} caption="Messages" />
+            <Tab src={homeIcon} caption="Home" to="/everyinteract" />
+            <Tab src={momentsIcon} caption="Moments" to="/moments" />
+            <Tab src={notificationsIcon} caption="Notifications" to="/notifications" />
+            <Tab src={messagesIcon} caption="Messages" to="/messages" />
           </Navigation>
         </div>
         <div className="col-lg-2 center-lg">

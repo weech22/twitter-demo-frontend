@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const Wrap = styled.div`
   cursor: pointer;
@@ -13,7 +14,7 @@ const Wrap = styled.div`
   }
 `;
 
-const Link = styled.a`
+const Link = styled(NavLink)`
   text-decoration: none;
   cursor: pointer;
   font-weight: 500;
@@ -30,11 +31,11 @@ const Icon = styled.img`
 `;
 
 const Tab = (props) => {
-  const { caption, src } = props;
+  const { caption, src, to } = props;
   return (
     <Wrap>
       <Icon src={src} alt="" />
-      <Link href="#">
+      <Link to={to}>
         {caption}
       </Link>
     </Wrap>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Header from './Header';
 import Wallpaper from './Wallpaper';
 import Menu from './Menu';
 import ProfileInfo from './ProfileInfo';
@@ -15,14 +14,13 @@ const ProfilePage = () => (
   <div>
     <Helmet>
       <title>
-Every Interaction (@EveryInteract)
+        {'Every Interaction (@EveryInteract)'}
       </title>
       <meta
         name="description"
         content="Последние твиты от Every Interaction (@EveryInteract). A user-experience design studio in London. We specialise in making the complex simple, the confusing intuitive and the perplexing obvious. London, UK"
       />
     </Helmet>
-    <Header />
     <Wallpaper />
     <Menu />
     <div className="container">
@@ -33,6 +31,7 @@ Every Interaction (@EveryInteract)
           <Media />
         </div>
         <div className="col-lg-6">
+          {/* рендерить компонент в зависимости от пути */}
           <TweetList />
         </div>
         <div className="col-lg-3">
