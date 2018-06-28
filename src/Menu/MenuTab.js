@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import numbro from 'numbro';
 import { NavLink } from 'react-router-dom';
 
 const Caption = styled.span`
@@ -43,13 +44,23 @@ const Count = styled.span`
 const MenuTab = (props) => {
   const { count, caption, to } = props;
 
+  const displayedCount = count >= 10000
+    ? numbro(count).format({
+      thousandSeparated: true,
+      average: true,
+      mantissa: 1,
+    })
+    : numbro(count).format({
+      thousandSeparated: true,
+    });
+
   return (
     <Tab exact to={to}>
       <Caption>
         {caption}
       </Caption>
       <Count>
-        {count}
+        {displayedCount}
       </Count>
     </Tab>
   );

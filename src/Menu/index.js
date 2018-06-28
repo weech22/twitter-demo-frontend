@@ -47,9 +47,9 @@ const Menu = () => (
       <div className="row">
         <div className="col-lg-4 col-lg-offset-3">
           <MenuBlock>
-            <MenuTab to="/everyinteract" count="8,058" caption="Tweets" />
+            <MenuTab to="/everyinteract" count="86058" caption="Tweets" />
             <MenuTab to="/" count="721" caption="Following" />
-            <MenuTab to="/" count="1,815" caption="Followers" />
+            <MenuTab to="/" count="1815" caption="Followers" />
             <MenuTab to="/" count="460" caption="Likes" />
             <MenuTab to="/" count="2" caption="Lists" />
           </MenuBlock>
