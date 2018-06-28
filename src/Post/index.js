@@ -154,8 +154,11 @@ const Post = (props) => {
             {`@${profileName}  •  ${time}`}
           </ProfileName>
         </div>
-        {isBigFont && <BigText dangerouslySetInnerHTML={{ __html: text }} />}
-        {!isBigFont && <Text dangerouslySetInnerHTML={{ __html: text }} />}
+        {isBigFont ? (
+          <BigText dangerouslySetInnerHTML={{ __html: text }} />
+        ) : (
+          <Text dangerouslySetInnerHTML={{ __html: text }} />
+        )}
         {preview && (
           <Preview image={preview.image} link={preview.link} title={preview.title}>
             {preview.description}
