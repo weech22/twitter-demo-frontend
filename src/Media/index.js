@@ -10,14 +10,7 @@ const photo4 = `${process.env.PUBLIC_URL}/photos/4.jpg`;
 const photo5 = `${process.env.PUBLIC_URL}/photos/5.jpg`;
 const photo6 = `${process.env.PUBLIC_URL}/photos/6.jpg`;
 
-const photos = [
-  { image: photo1, to: 'photo1' },
-  { image: photo2, to: 'photo2' },
-  { image: photo3, to: 'photo3' },
-  { image: photo4, to: 'photo4' },
-  { image: photo5, to: 'photo5' },
-  { image: photo6, to: 'photo6' },
-];
+const photos = [photo1, photo2, photo3, photo4, photo5, photo6];
 
 const Wrap = styled.div`
   margin-top: 31px;
@@ -39,8 +32,12 @@ const Link = styled(NavLink)`
 `;
 
 const Image = styled.img`
+  cursor: pointer;
   width: 83px;
   height: 83px;
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-right: 5px;
 `;
 
 const ImageSection = styled.div`
@@ -50,30 +47,20 @@ const ImageSection = styled.div`
   justify-content: space-between;
 `;
 
-const ImageLink = styled(NavLink)`
-  display: inline-block;
-  margin-bottom: 5px;
-  margin-right: 5px;
-`;
-
 const Icon = styled.img`
   margin-right: 8px;
 `;
 
-const Media = () => (
+const Media = ({ username }) => (
   <Wrap>
     <TitleBlock>
       <Icon src={mediaIcon} />
-      <Link to="media">
+      <Link to={`/${username}/media`}>
         {'522 Photos and videos'}
       </Link>
     </TitleBlock>
     <ImageSection>
-      {photos.map(photo => (
-        <ImageLink to={`/${photo.to}`}>
-          <Image src={photo.image} />
-        </ImageLink>
-      ))}
+      {photos.map(photo => <Image src={photo} />)}
     </ImageSection>
   </Wrap>
 );

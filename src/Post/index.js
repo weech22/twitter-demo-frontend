@@ -129,7 +129,7 @@ const Post = (props) => {
   const {
     isPinned,
     name,
-    profileName,
+    username,
     time,
     isBigFont,
     preview,
@@ -157,7 +157,7 @@ const Post = (props) => {
             {`${name} `}
           </Name>
           <ProfileName>
-            {`@${profileName}  •  ${time}`}
+            {`@${username}  •  ${time}`}
           </ProfileName>
         </div>
         {isBigFont ? (

@@ -79,41 +79,45 @@ const Title = styled.div`
   display: flex;
 `;
 
-const ProfileInfo = () => (
-  <Wrap>
-    <Title>
-      <Name to="EveryInteract">
-        {'Every Interaction'}
-      </Name>
-      <TitleIcon src={tick} />
-    </Title>
-    <ProfileName to="EveryInteract">
-      {'@EveryInteract'}
-    </ProfileName>
-    <FollowerProfile>
-      {'Follows you'}
-    </FollowerProfile>
-    <Description>
-      {'UX Design studio focused problem'}
-      <br />
-      {'solving creativity. Design to us is how'}
-      <br />
-      {'can we make things *work* amazing.'}
-    </Description>
-    <div>
-      <InfoLine caption="London, UK" icon={locationIcon} />
-      <InfoLine caption="everyinteraction.com" icon={linkIcon} isLink />
-      <InfoLine caption="Joined May 2008" icon={joinedIcon} />
-    </div>
-    <ButtonBlock>
-      <ContactButton>
-        {'Tweet to'}
-      </ContactButton>
-      <ContactButton>
-        {'Message'}
-      </ContactButton>
-    </ButtonBlock>
-  </Wrap>
-);
+const ProfileInfo = ({ userData }) => {
+  const { username, name } = userData;
+
+  return (
+    <Wrap>
+      <Title>
+        <Name to={`/${username}`}>
+          {name}
+        </Name>
+        <TitleIcon src={tick} />
+      </Title>
+      <ProfileName to={`/${username}`}>
+        {`@${username}`}
+      </ProfileName>
+      <FollowerProfile>
+        {'Follows you'}
+      </FollowerProfile>
+      <Description>
+        {'UX Design studio focused problem'}
+        <br />
+        {'solving creativity. Design to us is how'}
+        <br />
+        {'can we make things *work* amazing.'}
+      </Description>
+      <div>
+        <InfoLine caption="London, UK" icon={locationIcon} />
+        <InfoLine caption="everyinteraction.com" icon={linkIcon} isLink />
+        <InfoLine caption="Joined May 2008" icon={joinedIcon} />
+      </div>
+      <ButtonBlock>
+        <ContactButton>
+          {'Tweet to'}
+        </ContactButton>
+        <ContactButton>
+          {'Message'}
+        </ContactButton>
+      </ButtonBlock>
+    </Wrap>
+  );
+};
 
 export default ProfileInfo;

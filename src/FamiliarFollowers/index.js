@@ -2,22 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import followersIcon from './followers-icon.svg';
-
-const avatar1 = `${process.env.PUBLIC_URL}/avatars/1.jpg`;
-const avatar2 = `${process.env.PUBLIC_URL}/avatars/2.jpg`;
-const avatar3 = `${process.env.PUBLIC_URL}/avatars/3.jpg`;
-const avatar4 = `${process.env.PUBLIC_URL}/avatars/4.jpg`;
-const avatar5 = `${process.env.PUBLIC_URL}/avatars/5.jpg`;
-const avatar6 = `${process.env.PUBLIC_URL}/avatars/6.jpg`;
-
-const followers = [
-  { avatar: avatar1, profile: 'noveltyshoe' },
-  { avatar: avatar2, profile: 'Artsalve' },
-  { avatar: avatar3, profile: 'aya_ulan' },
-  { avatar: avatar4, profile: 'PinkyBazaaz' },
-  { avatar: avatar5, profile: 'orynas ‏' },
-  { avatar: avatar6, profile: 'benga' },
-];
+import followers from '../Followers';
 
 const Wrap = styled.div`
   margin-top: 18px;
@@ -61,17 +46,17 @@ const AvatarLink = styled(NavLink)`
   margin-right: 5px;
 `;
 
-const FamiliarFollowers = () => (
+const FamiliarFollowers = ({ username }) => (
   <Wrap>
     <TitleBlock>
       <Icon src={followersIcon} />
-      <Link to="/followers">
+      <Link to={`/${username}/followers`}>
         {'6 Followers you know'}
       </Link>
     </TitleBlock>
     <AvatarSection>
       {followers.map(follower => (
-        <AvatarLink to={`/${follower.profile}`}>
+        <AvatarLink to={`/${follower.username}`}>
           <Avatar src={follower.avatar} />
         </AvatarLink>
       ))}

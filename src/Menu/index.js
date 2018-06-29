@@ -41,17 +41,17 @@ const MoreButton = styled.button`
   cursor: pointer;
 `;
 
-const Menu = () => (
+const Menu = ({ username }) => (
   <Wrap>
     <div className="container">
       <div className="row">
         <div className="col-lg-4 col-lg-offset-3">
           <MenuBlock>
-            <MenuTab to="/everyinteract" count="86058" caption="Tweets" />
-            <MenuTab to="/" count="721" caption="Following" />
-            <MenuTab to="/" count="1815" caption="Followers" />
-            <MenuTab to="/" count="460" caption="Likes" />
-            <MenuTab to="/" count="2" caption="Lists" />
+            <MenuTab to={`/${username}`} count="8058" caption="Tweets" />
+            <MenuTab to={`/${username}/following`} count="721" caption="Following" />
+            <MenuTab to={`/${username}/followers`} count="1815" caption="Followers" />
+            <MenuTab to={`/${username}/likes`} count="460" caption="Likes" />
+            <MenuTab to={`/${username}/lists`} count="2" caption="Lists" />
           </MenuBlock>
         </div>
         <div className="col-lg-5 end-lg">

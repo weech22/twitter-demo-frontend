@@ -1,32 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import profiles from './WhoToFollow';
 import ProfileCard from './ProfileCard';
 import peopleIcon from './people-icon.svg';
-import aiAvatar from './ai.png';
-import creodeAvatar from './creode.png';
-import eAvatar from './epiphany.png';
-
-const profiles = [
-  {
-    avatar: aiAvatar,
-    name: 'AppleInsider',
-    profileName: 'appleinsider',
-    isVerified: false,
-  },
-  {
-    avatar: creodeAvatar,
-    name: 'Creode',
-    profileName: 'Creode',
-    isVerified: true,
-  },
-  {
-    avatar: eAvatar,
-    name: 'Epiphany Search',
-    profileName: 'Epiph...',
-    isVerified: false,
-  },
-];
 
 const Wrap = styled.div`
   background: white;
@@ -101,7 +78,7 @@ const FollowSuggestions = () => (
       <ProfileCard
         avatar={profile.avatar}
         name={profile.name}
-        profileName={profile.profileName}
+        username={profile.username}
         isVerified={profile.isVerified}
       />
     ))}
