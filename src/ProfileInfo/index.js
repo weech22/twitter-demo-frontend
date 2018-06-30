@@ -1,7 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import InfoLine from "./InfoLine";
-import tick from "./tick-icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import InfoLine from './InfoLine';
+import tick from './tick-icon.svg';
+import locationIcon from './location-icon.svg';
+import linkIcon from './link-icon.svg';
+import joinedIcon from './joined-icon.svg';
 
 const Wrap = styled.div`
   margin-top: 41px;
@@ -32,24 +36,25 @@ const Description = styled.p`
   margin-bottom: 11px;
 `;
 
-const Name = styled.span`
+const Name = styled(NavLink)`
   cursor: pointer;
   font-size: 22px;
   font-weight: 700;
   color: #14171a;
-  margin-bottom: 0;
+  text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
 `;
 
-const ProfileName = styled.span`
+const ProfileName = styled(NavLink)`
   cursor: pointer;
   line-height: 21px;
   font-size: 14px;
   font-weight: 400;
   color: #697787;
   margin-right: 8px;
+  text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
@@ -74,28 +79,45 @@ const Title = styled.div`
   display: flex;
 `;
 
-const ProfileInfo = props => (
-  <Wrap>
-    <Title>
-      <Name>Every Interaction</Name>
-      <TitleIcon src={tick} />
-    </Title>
-    <ProfileName>@EveryInteract</ProfileName>
-    <FollowerProfile>Follows you</FollowerProfile>
-    <Description>
-      UX Design studio focused problem<br />solving creativity. Design to us is
-      how<br />can we make things *work* amazing.
-    </Description>
-    <div>
-      <InfoLine location="London, UK" />
-      <InfoLine site="everyinteraction.com" />
-      <InfoLine joined="May 2008" />
-    </div>
-    <ButtonBlock>
-      <ContactButton>Tweet to</ContactButton>
-      <ContactButton>Message</ContactButton>
-    </ButtonBlock>
-  </Wrap>
-);
+const ProfileInfo = ({ userData }) => {
+  const { username, name } = userData;
+
+  return (
+    <Wrap>
+      <Title>
+        <Name to={`/${username}`}>
+          {name}
+        </Name>
+        <TitleIcon src={tick} />
+      </Title>
+      <ProfileName to={`/${username}`}>
+        {`@${username}`}
+      </ProfileName>
+      <FollowerProfile>
+        {'Follows you'}
+      </FollowerProfile>
+      <Description>
+        {'UX Design studio focused problem'}
+        <br />
+        {'solving creativity. Design to us is how'}
+        <br />
+        {'can we make things *work* amazing.'}
+      </Description>
+      <div>
+        <InfoLine caption="London, UK" icon={locationIcon} />
+        <InfoLine caption="everyinteraction.com" icon={linkIcon} isLink />
+        <InfoLine caption="Joined May 2008" icon={joinedIcon} />
+      </div>
+      <ButtonBlock>
+        <ContactButton>
+          {'Tweet to'}
+        </ContactButton>
+        <ContactButton>
+          {'Message'}
+        </ContactButton>
+      </ButtonBlock>
+    </Wrap>
+  );
+};
 
 export default ProfileInfo;

@@ -1,18 +1,15 @@
-import React from "react";
-import styled from "styled-components";
-import followersIcon from "./followers-icon.svg";
-const avatar1 = `${process.env.PUBLIC_URL}/avatars/1.jpg`;
-const avatar2 = `${process.env.PUBLIC_URL}/avatars/2.jpg`;
-const avatar3 = `${process.env.PUBLIC_URL}/avatars/3.jpg`;
-const avatar4 = `${process.env.PUBLIC_URL}/avatars/4.jpg`;
-const avatar5 = `${process.env.PUBLIC_URL}/avatars/5.jpg`;
-const avatar6 = `${process.env.PUBLIC_URL}/avatars/6.jpg`;
+
+import React from 'react';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import followersIcon from './followers-icon.svg';
+import followers from '../Followers';
 
 const Wrap = styled.div`
   margin-top: 18px;
 `;
 
-const Link = styled.a`
+const Link = styled(NavLink)`
   font-size: 14px;
   color: #1da1f2;
   text-decoration: none;
@@ -44,37 +41,26 @@ const Avatar = styled.img`
   height: 48px;
 `;
 
-const AvatarLink = styled.a`
+const AvatarLink = styled(NavLink)`
   display: inline-block;
   margin-bottom: 5px;
   margin-right: 5px;
 `;
 
-const FamiliarFollowers = () => (
+const FamiliarFollowers = ({ username }) => (
   <Wrap>
     <TitleBlock>
       <Icon src={followersIcon} />
-      <Link href="#">6 Followers you know</Link>
+      <Link to={`/${username}/followers`}>
+        {'6 Followers you know'}
+      </Link>
     </TitleBlock>
     <AvatarSection>
-      <AvatarLink href="#">
-        <Avatar src={avatar1} />
-      </AvatarLink>
-      <AvatarLink href="#">
-        <Avatar src={avatar2} />
-      </AvatarLink>
-      <AvatarLink href="#">
-        <Avatar src={avatar3} />
-      </AvatarLink>
-      <AvatarLink href="#">
-        <Avatar src={avatar4} />
-      </AvatarLink>
-      <AvatarLink href="#">
-        <Avatar src={avatar5} />
-      </AvatarLink>
-      <AvatarLink href="#">
-        <Avatar src={avatar6} />
-      </AvatarLink>
+      {followers.map(follower => (
+        <AvatarLink to={`/${follower.username}`}>
+          <Avatar src={follower.avatar} />
+        </AvatarLink>
+      ))}
     </AvatarSection>
   </Wrap>
 );

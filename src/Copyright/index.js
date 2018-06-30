@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const Wrap = styled.div`
   display: flex;
@@ -8,13 +9,12 @@ const Wrap = styled.div`
   margin-top: 23px;
 `;
 
-const Link = styled.a`
+const Link = styled(NavLink)`
   display: inline-block;
   margin-right: 7px;
   text-decoration: none;
   line-height: 18px;
   font-size: 13px;
-  letter-spacing: -0.4px;
   font-weight: 400;
   color: #718290;
   &:hover {
@@ -33,13 +33,27 @@ const Name = styled.span`
 
 const Copyright = () => (
   <Wrap>
-    <Name>© 2018 Twitter</Name>
-    <Link href="#">About</Link>
-    <Link href="#">Help Center</Link>
-    <Link href="#">Terms</Link>
-    <Link href="#">Privacy policy</Link>
-    <Link href="#">Cookies</Link>
-    <Link href="#">Ads info</Link>
+    <Name>
+      {'© 2018 Twitter'}
+    </Name>
+    <Link to="/about">
+      {'About'}
+    </Link>
+    <Link to="/help">
+      {'Help Center'}
+    </Link>
+    <Link to="/terms">
+      {'Terms'}
+    </Link>
+    <Link to="/privacy">
+      {'Privacy policy'}
+    </Link>
+    <Link to="/cookies">
+      {'Cookies'}
+    </Link>
+    <Link to="/ads">
+      {'Ads info'}
+    </Link>
   </Wrap>
 );
 

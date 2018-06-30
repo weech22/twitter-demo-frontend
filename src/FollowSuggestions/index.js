@@ -1,10 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import ProfileCard from "./ProfileCard";
-import peopleIcon from "./people-icon.svg";
-import aiAvatar from "./ai.png";
-import creodeAvatar from "./creode.png";
-import eAvatar from "./epiphany.png";
+import React from 'react';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import profiles from './whoToFollow';
+import ProfileCard from './ProfileCard';
+import peopleIcon from './people-icon.svg';
 
 const Wrap = styled.div`
   background: white;
@@ -18,13 +17,30 @@ const Title = styled.span`
   color: black;
 `;
 
-const Action = styled.a`
+const Action = styled.button`
   text-decoration: none;
+  background: white;
+  border: none;
+  cursor: pointer;
   font-size: 12px;
   color: #1da1f2;
   &:hover {
     text-decoration: underline;
   }
+  padding: 0;
+`;
+
+const Link = styled(NavLink)`
+  text-decoration: none;
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #1da1f2;
+  &:hover {
+    text-decoration: underline;
+  }
+  padding: 0;
 `;
 
 const Icon = styled.img`
@@ -39,34 +55,38 @@ const PeopleSearch = styled.div`
   margin-top: 23px;
 `;
 
-const Separator = () => <Dot> • </Dot>;
+const Separator = () => (
+  <Dot>
+    {' • '}
+  </Dot>
+);
 
 const FollowSuggestions = () => (
   <Wrap>
-    <Title>Who to follow</Title>
+    <Title>
+      {'Who to follow'}
+    </Title>
     <Separator />
-    <Action href="#">Refresh</Action>
+    <Action>
+      {'Refresh'}
+    </Action>
     <Separator />
-    <Action href="#">View all</Action>
-    <ProfileCard
-      avatar={aiAvatar}
-      name="AppleInsider"
-      profileName="appleinsider"
-    />
-    <ProfileCard
-      avatar={creodeAvatar}
-      name="Creode"
-      profileName="Creode"
-      verified
-    />
-    <ProfileCard
-      avatar={eAvatar}
-      name="Epiphany Search"
-      profileName="Epiph..."
-    />
+    <Link to="/view_all">
+      {'View all'}
+    </Link>
+    {profiles.map(profile => (
+      <ProfileCard
+        avatar={profile.avatar}
+        name={profile.name}
+        username={profile.username}
+        isVerified={profile.isVerified}
+      />
+    ))}
     <PeopleSearch>
       <Icon src={peopleIcon} />
-      <Action href="#">Find people you know</Action>
+      <Link to="/who_to_follow/import">
+        {'Find people you know'}
+      </Link>
     </PeopleSearch>
   </Wrap>
 );

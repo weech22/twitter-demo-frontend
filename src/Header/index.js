@@ -1,11 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import homeIcon from "./home-icon.svg";
-import moments from "./moments-icon.svg";
-import notifications from "./notifications-icon.svg";
-import messages from "./messages-icon.svg";
-import logo from "./twitter-logo.svg";
-import search from "./search-icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import Tab from './NavTab';
+import homeIcon from './home-icon.svg';
+import momentsIcon from './moments-icon.svg';
+import notificationsIcon from './notifications-icon.svg';
+import messagesIcon from './messages-icon.svg';
+import logo from './twitter-logo.svg';
+import searchIcon from './search-icon.svg';
 
 const avatar = `${process.env.PUBLIC_URL}/avatar.png`;
 
@@ -27,34 +28,6 @@ const TweetButton = styled.button`
   &:hover {
     background: #0072bb;
   }
-`;
-
-const LinkBlock = styled.div`
-  cursor: pointer;
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-  justify-content: center;
-  &:hover {
-    border-bottom: 4px solid #1da1f2;
-    padding-top: 4px;
-  }
-`;
-
-const Link = styled.a`
-  text-decoration: none;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 13px;
-  letter-spacing: 0.1px;
-  color: #667580;
-  ${LinkBlock}:hover & {
-    color: #1da1f2;
-  }
-`;
-
-const Icon = styled.img`
-  margin-right: 4px;
 `;
 
 const Navigation = styled.nav`
@@ -89,7 +62,7 @@ const SearchButton = styled.input`
   width: 15px;
   height: 15px;
   background: #f5f8fa;
-  background-image: url(${search});
+  background-image: url(${searchIcon});
   background-repeat: no-repeat;
   background-position: center center;
   border: none;
@@ -110,28 +83,16 @@ const SearchBlock = styled.div`
   justify-content: flex-end;
 `;
 
-const Header = props => (
+const Header = () => (
   <Wrap>
     <div className="container">
       <div className="row">
         <div className="col-lg-5">
           <Navigation>
-            <LinkBlock>
-              <Icon src={homeIcon} alt="" />
-              <Link>Home</Link>
-            </LinkBlock>
-            <LinkBlock>
-              <Icon src={moments} alt="" />
-              <Link>Moments</Link>
-            </LinkBlock>
-            <LinkBlock>
-              <Icon src={notifications} alt="" />
-              <Link>Notifications</Link>
-            </LinkBlock>
-            <LinkBlock>
-              <Icon src={messages} alt="" />
-              <Link>Messages</Link>
-            </LinkBlock>
+            <Tab src={homeIcon} caption="Home" to="/EveryInteract" />
+            <Tab src={momentsIcon} caption="Moments" to="/moments" />
+            <Tab src={notificationsIcon} caption="Notifications" to="/notifications" />
+            <Tab src={messagesIcon} caption="Messages" to="/messages" />
           </Navigation>
         </div>
         <div className="col-lg-2 center-lg">
@@ -144,7 +105,9 @@ const Header = props => (
               <SearchButton type="button" />
             </SearchForm>
             <Avatar src={avatar} />
-            <TweetButton>Tweet</TweetButton>
+            <TweetButton>
+              {'Tweet'}
+            </TweetButton>
           </SearchBlock>
         </div>
       </div>

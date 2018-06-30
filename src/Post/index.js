@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import Preview from "./Preview";
-import pinnedIcon from "./pinned-icon.svg";
-import commentsIcon from "./comments-icon.svg";
-import retweetsIcon from "./retweets-icon.svg";
-import likesIcon from "./likes-icon.svg";
-import lovesIcon from "./loves-icon.svg";
-import envelopeIcon from "./envelope-icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import Preview from './Preview';
+import pinnedIcon from './pinned-icon.svg';
+import commentsIcon from './comments-icon.svg';
+import retweetsIcon from './retweets-icon.svg';
+import likesIcon from './likes-icon.svg';
+import lovesIcon from './loves-icon.svg';
+import envelopeIcon from './envelope-icon.svg';
 
 const avatar = `${process.env.PUBLIC_URL}/avatar.png`;
 
@@ -30,7 +30,7 @@ const PostBlock = styled.div`
 const AvatarBlock = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: ${props => (props.pinned ? "3px" : "11px")};
+  margin-top: ${({ isPinned }) => (isPinned ? '3px' : '11px')};
   justify-content: flex-start;
   align-items: flex-end;
 `;
@@ -39,7 +39,6 @@ const Name = styled.span`
   line-height: 19px;
   font-weight: 500;
   font-size: 15px;
-  letter-spacing: -0.2px;
   color: #292f33;
 `;
 
@@ -56,21 +55,21 @@ const AvatarImage = styled.img`
 `;
 
 const Text = styled.p`
-  line-height: 22px;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: -0.2px;
-  color: #292f33;
-  margin-top: 0;
-`;
+  ${({ isPinned }) => (isPinned ? '3px' : '11px')};
 
-const BigText = styled.p`
-  line-height: 30px;
-  font-size: 25px;
-  font-weight: 200;
-
+  line-height: ${({ isBigFont }) => (isBigFont ? '30px' : '22px')};
+  font-size: ${({ isBigFont }) => (isBigFont ? '25px' : '16px')};
+  font-weight: ${({ isBigFont }) => (isBigFont ? '200' : '400')};
   color: #292f33;
   margin: 0 0 13px 0;
+
+  > a {
+    text-decoration: none;
+    color: #72c4f6;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 const Icon = styled.img`
@@ -88,9 +87,8 @@ const Action = styled.div`
 
 const ActionCount = styled.span`
   font-size: 13px;
-  letter-spacing: -0.2px;
-  color: ${props => (props.liked ? "#E2264D" : "#667580")};
-  font-weight: ${props => (props.liked ? "bold" : "normal")};
+  font-weight: ${({ isLiked }) => (isLiked ? 'bold' : 'normal')};
+  color: ${({ isLiked }) => (isLiked ? '#E2264D' : '#667580')};
 `;
 
 const ActionBlock = styled.div`
@@ -101,7 +99,6 @@ const ActionBlock = styled.div`
 
 const Pinned = styled.span`
   font-size: 12px;
-  letter-spacing: -0.2px;
   color: #707e88;
   margin-bottom: 4px;
   display: block;
@@ -116,57 +113,78 @@ const PostedImage = styled.img`
   width: 495px;
 `;
 
-const Post = props => (
-  <Wrap>
-    <AvatarBlock pinned={props.pinned}>
-      {props.pinned && <Pin src={pinnedIcon} />}
-      <AvatarImage src={avatar} />
-    </AvatarBlock>
-    <PostBlock>
-      <div>
-        {props.pinned && <Pinned>Pinned Tweet</Pinned>}
-        <Name>{props.name} </Name>
-        <ProfileName>
-          @{props.profileName} • {props.time}
-        </ProfileName>
-      </div>
-      {props.bigFont && <BigText>{props.children}</BigText>}
-      {!props.bigFont && <Text>{props.children}</Text>}
-      {props.preview && (
-        <Preview
-          image={props.preview.image}
-          link={props.preview.link}
-          title={props.preview.title}
-        >
-          {props.preview.description}
-        </Preview>
-      )}
-      {props.image && (
-        <ImageBlock>
-          <PostedImage src={props.image} />
-        </ImageBlock>
-      )}
-      <ActionBlock>
-        <Action>
-          <Icon src={commentsIcon} />
-          <ActionCount>{props.comments > 0 && props.comments}</ActionCount>
-        </Action>
-        <Action>
-          <Icon src={retweetsIcon} />
-          <ActionCount>{props.retweets > 0 && props.retweets}</ActionCount>
-        </Action>
-        <Action>
-          {props.liked ? <Icon src={lovesIcon} /> : <Icon src={likesIcon} />}
-          <ActionCount liked={props.liked}>
-            {props.likes > 0 && props.likes}
-          </ActionCount>
-        </Action>
-        <Action>
-          <Icon src={envelopeIcon} />
-        </Action>
-      </ActionBlock>
-    </PostBlock>
-  </Wrap>
-);
+const Post = (props) => {
+  const {
+    isPinned,
+    name,
+    username,
+    time,
+    isBigFont,
+    preview,
+    image,
+    comments,
+    retweets,
+    isLiked,
+    likes,
+    text,
+  } = props;
+  return (
+    <Wrap>
+      <AvatarBlock isPinned={isPinned}>
+        {isPinned && <Pin src={pinnedIcon} />}
+        <AvatarImage src={avatar} />
+      </AvatarBlock>
+      <PostBlock>
+        <div>
+          {isPinned && (
+          <Pinned>
+            {'Pinned Tweet'}
+          </Pinned>
+          )}
+          <Name>
+            {`${name} `}
+          </Name>
+          <ProfileName>
+            {`@${username}  •  ${time}`}
+          </ProfileName>
+        </div>
+        <Text dangerouslySetInnerHTML={{ __html: text }} isBigFont={isBigFont} />
+        {preview && (
+          <Preview image={preview.image} link={preview.link} title={preview.title}>
+            {preview.description}
+          </Preview>
+        )}
+        {image && (
+          <ImageBlock>
+            <PostedImage src={image} />
+          </ImageBlock>
+        )}
+        <ActionBlock>
+          <Action>
+            <Icon src={commentsIcon} />
+            <ActionCount>
+              {comments > 0 && comments}
+            </ActionCount>
+          </Action>
+          <Action>
+            <Icon src={retweetsIcon} />
+            <ActionCount>
+              {retweets > 0 && retweets}
+            </ActionCount>
+          </Action>
+          <Action>
+            {isLiked ? <Icon src={lovesIcon} /> : <Icon src={likesIcon} />}
+            <ActionCount isLiked={isLiked}>
+              {likes > 0 && likes}
+            </ActionCount>
+          </Action>
+          <Action>
+            <Icon src={envelopeIcon} />
+          </Action>
+        </ActionBlock>
+      </PostBlock>
+    </Wrap>
+  );
+};
 
 export default Post;
