@@ -55,26 +55,14 @@ const AvatarImage = styled.img`
 `;
 
 const Text = styled.p`
-  line-height: 22px;
-  font-size: 16px;
-  font-weight: 400;
-  color: #292f33;
-  margin-top: 0;
-  > a {
-    text-decoration: none;
-    color: #72c4f6;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
+  ${({ isPinned }) => (isPinned ? '3px' : '11px')};
 
-const BigText = styled.p`
-  line-height: 30px;
-  font-size: 25px;
-  font-weight: 200;
+  line-height: ${({ isBigFont }) => (isBigFont ? '30px' : '22px')};
+  font-size: ${({ isBigFont }) => (isBigFont ? '25px' : '16px')};
+  font-weight: ${({ isBigFont }) => (isBigFont ? '200' : '400')};
   color: #292f33;
   margin: 0 0 13px 0;
+
   > a {
     text-decoration: none;
     color: #72c4f6;
@@ -160,11 +148,7 @@ const Post = (props) => {
             {`@${username}  •  ${time}`}
           </ProfileName>
         </div>
-        {isBigFont ? (
-          <BigText dangerouslySetInnerHTML={{ __html: text }} />
-        ) : (
-          <Text dangerouslySetInnerHTML={{ __html: text }} />
-        )}
+        <Text dangerouslySetInnerHTML={{ __html: text }} isBigFont={isBigFont} />
         {preview && (
           <Preview image={preview.image} link={preview.link} title={preview.title}>
             {preview.description}

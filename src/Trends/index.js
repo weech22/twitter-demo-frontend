@@ -66,16 +66,11 @@ const Trends = () => (
       {'Change'}
     </Action>
     <TrendSection>
-      {trends.map((trend) => {
-        const to = trend.title[0] === '#'
-          ? `/hashtag/${trend.title.slice(1)}&src=tren`
-          : `/search?q=${trend.title}&src=tren`;
-        return (
-          <TrendLine subTitle={trend.subTitle} to={to}>
-            {trend.title}
-          </TrendLine>
-        );
-      })}
+      {trends.map(trend => (
+        <TrendLine subTitle={trend.subTitle} to={`/search?q=${trend.title}&src=tren`}>
+          {trend.title}
+        </TrendLine>
+      ))}
     </TrendSection>
   </Wrap>
 );

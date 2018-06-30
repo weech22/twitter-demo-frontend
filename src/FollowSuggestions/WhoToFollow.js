@@ -1,8 +1,8 @@
-import aiAvatar from './ai.png';
-import creodeAvatar from './creode.png';
-import eAvatar from './epiphany.png';
+const aiAvatar = `${process.env.PUBLIC_URL}/avatars/ai.png`;
+const creodeAvatar = `${process.env.PUBLIC_URL}/avatars/creode.png`;
+const eAvatar = `${process.env.PUBLIC_URL}/avatars/epiphany.png`;
 
-const WhoToFollow = [
+const whoToFollow = [
   {
     avatar: aiAvatar,
     name: 'AppleInsider',
@@ -23,4 +23,4 @@ const WhoToFollow = [
   },
 ];
 
-export default WhoToFollow;
+export default whoToFollow;

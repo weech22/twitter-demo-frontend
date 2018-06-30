@@ -1,8 +1,7 @@
-
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import profiles from './WhoToFollow';
+import profiles from './whoToFollow';
 import ProfileCard from './ProfileCard';
 import peopleIcon from './people-icon.svg';
 
